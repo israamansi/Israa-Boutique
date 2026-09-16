@@ -1,0 +1,85 @@
+<header>
+  <div class="header-inner">
+    <div class="logo">Israa Boutique</div>
+
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#best-sellers">Best Sellers</a>
+    </nav>
+
+    <div class="header-actions">
+      <button class="language" onclick="toggleLanguage()">AR | EN</button>
+      <button class="cart-button" onclick="openCart()">🛒 <span id="cartCount">0</span></button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h1>Israa Boutique</h1>
+      <p>Elegant Hijabs, Made for You</p>
+      <a href="#best-sellers" class="hero-button">Shop Best Sellers</a>
+    </div>
+  </section>
+
+  <section class="section" id="best-sellers">
+    <h2 class="section-title">Best Sellers</h2>
+    <div class="products" id="productsContainer"></div>
+  </section>
+</main>
+
+<div class="overlay" id="productOverlay">
+  <div class="modal">
+    <button class="close" onclick="closeProduct()">×</button>
+
+    <img id="modalImage" class="modal-image" src="" alt="">
+
+    <h2 id="modalName"></h2>
+
+    <p>
+      <strong>Color:</strong>
+      <span id="modalColor"></span>
+    </p>
+
+    <p>
+      <strong>Price:</strong>
+      <span id="modalPrice"></span> EGP
+    </p>
+
+    <button class="add-button" onclick="addCurrentProduct()">
+      Add to Cart
+    </button>
+  </div>
+</div>
+
+<div class="overlay" id="cartOverlay">
+  <div class="modal">
+    <button class="close" onclick="closeCart()">×</button>
+
+    <h2>Your Cart</h2>
+
+    <div id="cartItems"></div>
+
+    <div class="cart-total">
+      Total: <span id="cartTotal">0</span> EGP
+    </div>
+
+    <button class="checkout-button" onclick="openCheckout()">
+      Checkout
+    </button>
+  </div>
+</div>
+
+<div class="overlay" id="checkoutOverlay">
+  <div class="modal">
+    <button class="close" onclick="closeCheckout()">×</button>
+
+    <h2>Checkout</h2>
+
+    <form class="checkout-form" onsubmit="placeOrder(event)">
+
+      <label for="customerName">Name</label>
+      <input id="customerName" type="text" required>
+
+      <label for="customerPhone">Phone</label>
