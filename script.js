@@ -1,5 +1,6 @@
 const whatsapp = "201021755186";
 
+
 /* =========================
    BEST SELLERS
 ========================= */
@@ -29,16 +30,18 @@ const bestSellers = [
 
 
 /* =========================
-   PRODUCT GROUPS
+   PRODUCTS
 ========================= */
 
 const productGroups = [
 
   /* Crystal Comfort */
+
   {
     id: "crystal",
     name: "Crystal Comfort Scarf",
     price: 150,
+
     colors: [
       {
         color: "Mint Green",
@@ -61,10 +64,12 @@ const productGroups = [
 
 
   /* Crepe Chiffon - Group 1 */
+
   {
     id: "chiffon1",
     name: "Crepe Chiffon Scarf",
     price: 200,
+
     colors: [
       {
         color: "Sahara",
@@ -87,10 +92,12 @@ const productGroups = [
 
 
   /* Crepe Chiffon - Group 2 */
+
   {
     id: "chiffon2",
     name: "Crepe Chiffon Scarf",
     price: 200,
+
     colors: [
       {
         color: "White",
@@ -113,10 +120,12 @@ const productGroups = [
 
 
   /* Crepe Chiffon - Group 3 */
+
   {
     id: "chiffon3",
     name: "Crepe Chiffon Scarf",
     price: 200,
+
     colors: [
       {
         color: "Mint Green",
@@ -139,10 +148,12 @@ const productGroups = [
 
 
   /* Crepe Chiffon - Group 4 */
+
   {
     id: "chiffon4",
     name: "Crepe Chiffon Scarf",
     price: 200,
+
     colors: [
       {
         color: "Baby Blue",
@@ -173,10 +184,12 @@ const productGroups = [
 
 
   /* Crepe Chiffon - Group 5 */
+
   {
     id: "chiffon5",
     name: "Crepe Chiffon Scarf",
     price: 200,
+
     colors: [
       {
         color: "Peach",
@@ -207,10 +220,12 @@ const productGroups = [
 
 
   /* Crepe Chiffon - Group 6 */
+
   {
     id: "chiffon6",
     name: "Crepe Chiffon Scarf",
     price: 200,
+
     colors: [
       {
         color: "Dusty Rose",
@@ -233,10 +248,12 @@ const productGroups = [
 
 
   /* Crepe Chiffon - Group 7 */
+
   {
     id: "chiffon7",
     name: "Crepe Chiffon Scarf",
     price: 200,
+
     colors: [
       {
         color: "Dusty Grey",
@@ -251,850 +268,12 @@ const productGroups = [
 
 
   /* Crepe Chiffon - Group 8 */
+
   {
     id: "chiffon8",
     name: "Crepe Chiffon Scarf",
     price: 200,
+
     colors: [
       {
-        color: "Dark Mauve",
-        image: "1789664028182.jpg"
-      },
-      {
-        color: "Mulberry",
-        image: "1789672320095.jpg"
-      },
-      {
-        color: "Lavender",
-        image: "1789612119826.jpg"
-      },
-      {
-        color: "Ice Mauve",
-        image: "1789658699638.jpg"
-      },
-      {
-        color: "Aubergine",
-        image: "Aubergine.jpg"
-      }
-    ]
-  }
-];
-
-
-/* =========================
-   CART
-========================= */
-
-let cart =
-  JSON.parse(localStorage.getItem("israaCart")) || [];
-
-let currentProduct = null;
-let currentGroup = null;
-let currentIndex = 0;
-
-
-/* =========================
-   BEST SELLERS
-========================= */
-
-function renderBestSellers() {
-
-  const container =
-    document.getElementById("productsContainer");
-
-  if (!container) return;
-
-  container.innerHTML = "";
-
-  bestSellers.forEach(product => {
-
-    const card =
-      document.createElement("div");
-
-    card.className = "product-card";
-
-    card.innerHTML = `
-      <img
-        src="${product.image}"
-        alt="${product.name}"
-        class="product-image"
-      >
-      <h3>${product.name}</h3>
-    `;
-
-    container.appendChild(card);
-  });
-
-  renderProductGroups();
-}
-
-
-/* =========================
-   PRODUCT GROUPS
-========================= */
-
-function renderProductGroups() {
-
-  let catalog =
-    document.getElementById("productCatalog");
-
-  if (!catalog) {
-
-    catalog =
-      document.createElement("section");
-
-    catalog.id =
-      "productCatalog";
-
-    catalog.className =
-      "section";
-
-    const bestSection =
-      document.getElementById("best-sellers");
-
-    if (bestSection) {
-      bestSection.after(catalog);
-    } else {
-      document.body.appendChild(catalog);
-    }
-  }
-
-  catalog.innerHTML = `
-    <h2 class="section-title">
-      Shop by Collection
-    </h2>
-  `;
-
-
-  productGroups.forEach(group => {
-
-    const groupSection =
-      document.createElement("div");
-
-    groupSection.className =
-      "product-group";
-
-    groupSection.innerHTML = `
-      <h3 class="group-title">
-        ${group.name}
-      </h3>
-
-      <div class="group-window">
-
-        <div
-          class="group-track"
-          id="track-${group.id}"
-        >
-        </div>
-
-      </div>
-    `;
-
-    catalog.appendChild(groupSection);
-
-
-    const track =
-      groupSection.querySelector(
-        `#track-${group.id}`
-      );
-
-
-    group.colors.forEach(
-      (product, index) => {
-
-        const card =
-          document.createElement("div");
-
-        card.className =
-          "catalog-card";
-
-        card.innerHTML = `
-          <img
-            src="${product.image}"
-            alt="${product.color}"
-          >
-
-          <div class="catalog-info">
-
-            <strong>
-              ${group.name}
-            </strong>
-
-            <span>
-              ${product.color}
-            </span>
-
-            <span>
-              ${group.price} EGP
-            </span>
-
-            <button
-              onclick="openProduct('${group.id}', ${index})"
-            >
-              View
-            </button>
-
-          </div>
-        `;
-
-        track.appendChild(card);
-      }
-    );
-  });
-}
-
-
-/* =========================
-   PRODUCT MODAL
-========================= */
-
-function openProduct(
-  groupId,
-  index
-) {
-
-  const group =
-    productGroups.find(
-      item => item.id === groupId
-    );
-
-  if (!group) return;
-
-  currentGroup =
-    group;
-
-  currentIndex =
-    index;
-
-  currentProduct =
-    group.colors[index];
-
-  updateProductModal();
-
-  document
-    .getElementById("productOverlay")
-    .classList.add("active");
-}
-
-
-function updateProductModal() {
-
-  if (
-    !currentGroup ||
-    !currentProduct
-  ) return;
-
-
-  document.getElementById(
-    "modalImage"
-  ).src =
-    currentProduct.image;
-
-
-  document.getElementById(
-    "modalImage"
-  ).alt =
-    currentProduct.color;
-
-
-  document.getElementById(
-    "modalName"
-  ).textContent =
-    currentGroup.name;
-
-
-  document.getElementById(
-    "modalColor"
-  ).textContent =
-    currentProduct.color;
-
-
-  document.getElementById(
-    "modalPrice"
-  ).textContent =
-    currentGroup.price;
-}
-
-
-function nextProduct() {
-
-  if (!currentGroup) return;
-
-  currentIndex++;
-
-  if (
-    currentIndex >=
-    currentGroup.colors.length
-  ) {
-    currentIndex = 0;
-  }
-
-  currentProduct =
-    currentGroup.colors[currentIndex];
-
-  updateProductModal();
-}
-
-
-function previousProduct() {
-
-  if (!currentGroup) return;
-
-  currentIndex--;
-
-  if (currentIndex < 0) {
-
-    currentIndex =
-      currentGroup.colors.length - 1;
-  }
-
-  currentProduct =
-    currentGroup.colors[currentIndex];
-
-  updateProductModal();
-}
-
-
-function closeProduct() {
-
-  document
-    .getElementById("productOverlay")
-    .classList.remove("active");
-}
-
-
-/* =========================
-   SWIPE
-========================= */
-
-let touchStartX = 0;
-
-
-document.addEventListener(
-  "touchstart",
-  function(event) {
-
-    if (!event.touches.length)
-      return;
-
-    touchStartX =
-      event.touches[0].clientX;
-  }
-);
-
-
-document.addEventListener(
-  "touchend",
-  function(event) {
-
-    if (
-      !touchStartX ||
-      !event.changedTouches.length
-    ) return;
-
-    const touchEndX =
-      event.changedTouches[0].clientX;
-
-    const difference =
-      touchStartX - touchEndX;
-
-
-    if (
-      Math.abs(difference) > 50
-    ) {
-
-      if (difference > 0) {
-
-        nextProduct();
-
-      } else {
-
-        previousProduct();
-      }
-    }
-
-    touchStartX = 0;
-  }
-);
-
-
-/* =========================
-   CART
-========================= */
-
-function saveCart() {
-
-  localStorage.setItem(
-    "israaCart",
-    JSON.stringify(cart)
-  );
-
-  updateCartCount();
-}
-
-
-function updateCartCount() {
-
-  const count =
-    document.getElementById(
-      "cartCount"
-    );
-
-  if (!count) return;
-
-  count.textContent =
-    cart.length;
-}
-
-
-function addCurrentProduct() {
-
-  if (
-    !currentProduct ||
-    !currentGroup
-  ) return;
-
-
-  cart.push({
-
-    name:
-      currentGroup.name,
-
-    color:
-      currentProduct.color,
-
-    price:
-      currentGroup.price,
-
-    image:
-      currentProduct.image
-
-  });
-
-
-  saveCart();
-
-  alert(
-    "Added to cart"
-  );
-
-  closeProduct();
-}
-
-
-function openCart() {
-
-  renderCart();
-
-  document
-    .getElementById("cartOverlay")
-    .classList.add("active");
-}
-
-
-function closeCart() {
-
-  document
-    .getElementById("cartOverlay")
-    .classList.remove("active");
-}
-
-
-function renderCart() {
-
-  const container =
-    document.getElementById(
-      "cartItems"
-    );
-
-  const total =
-    document.getElementById(
-      "cartTotal"
-    );
-
-  if (!container || !total)
-    return;
-
-
-  container.innerHTML = "";
-
-  let sum = 0;
-
-
-  cart.forEach(
-    (item, index) => {
-
-      sum += item.price;
-
-
-      const row =
-        document.createElement("div");
-
-      row.className =
-        "cart-item";
-
-
-      row.innerHTML = `
-        <img
-          src="${item.image}"
-          alt="${item.color}"
-        >
-
-        <div>
-
-          <strong>
-            ${item.name}
-          </strong>
-
-          <p>
-            ${item.color}
-          </p>
-
-          <p>
-            ${item.price} EGP
-          </p>
-
-          <button
-            onclick="removeFromCart(${index})"
-          >
-            Remove
-          </button>
-
-        </div>
-      `;
-
-
-      container.appendChild(row);
-    }
-  );
-
-
-  total.textContent =
-    sum;
-}
-
-
-function removeFromCart(index) {
-
-  cart.splice(
-    index,
-    1
-  );
-
-  saveCart();
-
-  renderCart();
-}
-
-
-/* =========================
-   CHECKOUT
-========================= */
-
-function openCheckout() {
-
-  if (cart.length === 0) {
-
-    alert(
-      "Your cart is empty"
-    );
-
-    return;
-  }
-
-
-  closeCart();
-
-
-  document
-    .getElementById(
-      "checkoutOverlay"
-    )
-    .classList.add("active");
-}
-
-
-function closeCheckout() {
-
-  document
-    .getElementById(
-      "checkoutOverlay"
-    )
-    .classList.remove("active");
-}
-
-
-/* =========================
-   WHATSAPP ORDER
-========================= */
-
-function placeOrder(event) {
-
-  event.preventDefault();
-
-
-  const name =
-    document.getElementById(
-      "customerName"
-    ).value;
-
-
-  const phone =
-    document.getElementById(
-      "customerPhone"
-    ).value;
-
-
-  const governorate =
-    document.getElementById(
-      "governorate"
-    ).value;
-
-
-  const address =
-    document.getElementById(
-      "customerAddress"
-    ).value;
-
-
-  let message =
-    "New Order - Israa Boutique\n\n";
-
-
-  message +=
-    "Name: " +
-    name +
-    "\n";
-
-
-  message +=
-    "Phone: " +
-    phone +
-    "\n";
-
-
-  message +=
-    "Governorate: " +
-    governorate +
-    "\n";
-
-
-  message +=
-    "Address: " +
-    address +
-    "\n\n";
-
-
-  message +=
-    "Products:\n";
-
-
-  let total = 0;
-
-
-  cart.forEach(
-    (item, index) => {
-
-      message +=
-        `${index + 1}. ${item.name} - ${item.color} - ${item.price} EGP\n`;
-
-      total +=
-        item.price;
-    }
-  );
-
-
-  message +=
-    "\nTotal: " +
-    total +
-    " EGP\n";
-
-
-  message +=
-    "\nPayment Method: Vodafone Cash";
-
-
-  message +=
-    "\nVodafone Cash Number: 01021755186";
-
-
-  const url =
-    "https://wa.me/" +
-    whatsapp +
-    "?text=" +
-    encodeURIComponent(
-      message
-    );
-
-
-  window.open(
-    url,
-    "_blank"
-  );
-
-
-  cart = [];
-
-  saveCart();
-
-  closeCheckout();
-}
-
-
-/* =========================
-   LANGUAGE
-========================= */
-
-let currentLanguage =
-  localStorage.getItem(
-    "israaLanguage"
-  ) || "en";
-
-
-function toggleLanguage() {
-
-  currentLanguage =
-    currentLanguage === "en"
-      ? "ar"
-      : "en";
-
-
-  localStorage.setItem(
-    "israaLanguage",
-    currentLanguage
-  );
-
-
-  applyLanguage();
-}
-
-
-function applyLanguage() {
-
-  const html =
-    document.documentElement;
-
-
-  if (
-    currentLanguage === "ar"
-  ) {
-
-    html.lang = "ar";
-
-    html.dir = "rtl";
-
-
-    const translations = {
-
-      "Home":
-        "الرئيسية",
-
-      "Best Sellers":
-        "الأكثر مبيعًا",
-
-      "Elegant Hijabs, Made for You":
-        "حجابات أنيقة صُممت لك",
-
-      "Shop Best Sellers":
-        "تسوقي الأكثر مبيعًا",
-
-      "Your Cart":
-        "سلة المشتريات",
-
-      "Checkout":
-        "إتمام الطلب",
-
-      "Name":
-        "الاسم",
-
-      "Phone":
-        "رقم الهاتف",
-
-      "Governorate":
-        "المحافظة",
-
-      "Address":
-        "العنوان",
-
-      "Payment Method":
-        "طريقة الدفع",
-
-      "Add to Cart":
-        "أضف إلى السلة",
-
-      "Send Order via WhatsApp":
-        "إرسال الطلب عبر واتساب",
-
-      "View":
-        "عرض",
-
-      "Remove":
-        "حذف",
-
-      "Shop by Collection":
-        "تسوق حسب المجموعة"
-
-    };
-
-
-    translatePage(
-      translations
-    );
-
-
-  } else {
-
-    html.lang = "en";
-
-    html.dir = "ltr";
-
-    location.reload();
-  }
-}
-
-
-function translatePage(
-  translations
-) {
-
-  document
-    .querySelectorAll(
-      "body *"
-    )
-    .forEach(
-      element => {
-
-        if (
-          element.children.length === 0 &&
-          translations[
-            element.textContent.trim()
-          ]
-        ) {
-
-          element.textContent =
-            translations[
-              element.textContent.trim()
-            ];
-        }
-
-      }
-    );
-}
-
-
-/* =========================
-   INITIALIZE
-========================= */
-
-document.addEventListener(
-  "DOMContentLoaded",
-  function() {
-
-    renderBestSellers();
-
-    updateCartCount();
-
-    applyLanguage();
-
-  }
-);
+        color
