@@ -12,7 +12,10 @@
 
 <body>
 
+  <!-- HEADER -->
+
   <header>
+
     <div class="header-inner">
 
       <div class="logo">
@@ -20,31 +23,32 @@
       </div>
 
       <nav>
-        <a href="#home">Home</a>
-        <a href="#best-sellers">Best Sellers</a>
+
+        <a href="#home">
+          Home
+        </a>
+
+        <a href="#best-sellers">
+          Best Sellers
+        </a>
+
       </nav>
 
       <div class="header-actions">
 
-        <button
-          class="language"
-          onclick="toggleLanguage()"
-        >
-          AR | EN
-        </button>
-
-        <button
-          class="cart-button"
-          onclick="openCart()"
-        >
-          🛒 <span id="cartCount">0</span>
+        <button class="cart-button" onclick="openCart()">
+          🛒
+          <span id="cartCount">0</span>
         </button>
 
       </div>
 
     </div>
+
   </header>
 
+
+  <!-- MAIN -->
 
   <main>
 
@@ -124,18 +128,12 @@
       <h2 id="modalName"></h2>
 
       <p>
-        <strong>
-          Color:
-        </strong>
-
+        <strong>Color:</strong>
         <span id="modalColor"></span>
       </p>
 
       <p>
-        <strong>
-          Price:
-        </strong>
-
+        <strong>Price:</strong>
         <span id="modalPrice"></span>
         EGP
       </p>
@@ -326,8 +324,6 @@
         >
 
 
-        <!-- PAYMENT -->
-
         <div class="payment-box">
 
           <strong>
@@ -371,8 +367,6 @@
 
   </footer>
 
-
-  <!-- JAVASCRIPT -->
 
   <script src="script.js"></script>
 
