@@ -15,8 +15,8 @@
 
     <nav>
       <a href="#home">Home</a>
-      <a href="#best-sellers">Best Sellers</a>
       <a href="#quiz">Find Your Look</a>
+      <a href="#productCatalog">Shop</a>
     </nav>
 
     <div class="header-actions">
@@ -31,95 +31,100 @@
   </div>
 </header>
 
-
 <main>
 
   <!-- HERO -->
   <section class="hero" id="home">
-    <div class="hero-content">
+    <div class="hero-overlay">
       <h1>Israa Boutique</h1>
-      <p>Elegant Hijabs, Made for You</p>
-      <a href="#best-sellers" class="hero-button">Shop Best Sellers</a>
+      <p>Elegant hijabs, made for your style.</p>
+      <a href="#productCatalog" class="hero-button">Shop Collection</a>
     </div>
-  </section>
-
-
-  <!-- BEST SELLERS -->
-  <section class="section" id="best-sellers">
-    <h2 class="section-title">Best Sellers</h2>
-    <div class="products" id="productsContainer"></div>
   </section>
 
 
   <!-- QUIZ -->
   <section class="section quiz-section" id="quiz">
-
     <h2 class="section-title">Help You Find Your Look</h2>
 
     <div class="quiz-box">
 
       <div class="quiz-question">
-        <h3>What is your skin undertone?</h3>
+        <p>1. What colors do you usually wear?</p>
 
         <label>
-          <input type="radio" name="undertone" value="warm">
-          Warm
+          <input type="radio" name="q1" value="neutral">
+          Neutral
         </label>
 
         <label>
-          <input type="radio" name="undertone" value="cool">
-          Cool
+          <input type="radio" name="q1" value="soft">
+          Soft & Light
         </label>
 
         <label>
-          <input type="radio" name="undertone" value="neutral">
+          <input type="radio" name="q1" value="dark">
+          Dark
+        </label>
+
+        <label>
+          <input type="radio" name="q1" value="colorful">
+          Colorful
+        </label>
+      </div>
+
+
+      <div class="quiz-question">
+        <p>2. What vibe do you prefer?</p>
+
+        <label>
+          <input type="radio" name="q2" value="elegant">
+          Elegant
+        </label>
+
+        <label>
+          <input type="radio" name="q2" value="soft">
+          Soft
+        </label>
+
+        <label>
+          <input type="radio" name="q2" value="classic">
+          Classic
+        </label>
+
+        <label>
+          <input type="radio" name="q2" value="bold">
+          Bold
+        </label>
+      </div>
+
+
+      <div class="quiz-question">
+        <p>3. Which color family attracts you most?</p>
+
+        <label>
+          <input type="radio" name="q3" value="green">
+          Green
+        </label>
+
+        <label>
+          <input type="radio" name="q3" value="blue">
+          Blue
+        </label>
+
+        <label>
+          <input type="radio" name="q3" value="pink">
+          Pink
+        </label>
+
+        <label>
+          <input type="radio" name="q3" value="neutral">
           Neutral
         </label>
       </div>
 
-
-      <div class="quiz-question">
-        <h3>What do you prefer?</h3>
-
-        <label>
-          <input type="radio" name="brightness" value="light">
-          Light colors
-        </label>
-
-        <label>
-          <input type="radio" name="brightness" value="dark">
-          Dark colors
-        </label>
-      </div>
-
-
-      <div class="quiz-question">
-        <h3>Which palette feels more like you?</h3>
-
-        <label>
-          <input type="radio" name="palette" value="earthy">
-          Warm & Earthy
-        </label>
-
-        <label>
-          <input type="radio" name="palette" value="soft">
-          Soft & Cool
-        </label>
-
-        <label>
-          <input type="radio" name="palette" value="green">
-          Fresh & Green
-        </label>
-
-        <label>
-          <input type="radio" name="palette" value="deep">
-          Deep & Rich
-        </label>
-      </div>
-
-
-      <button class="quiz-button" onclick="getRecommendation()">
-        Find My Color
+      <button class="quiz-button" onclick="findMyLook()">
+        Find My Look
       </button>
 
       <div id="quizResult" class="quiz-result"></div>
@@ -135,51 +140,40 @@
 
 
 <!-- PRODUCT MODAL -->
-<div class="overlay" id="productOverlay">
+<div id="productModal" class="modal-overlay">
+  <div class="modal product-modal">
 
-  <div class="modal">
+    <button class="modal-close" onclick="closeProduct()">×</button>
 
-    <button class="close" onclick="closeProduct()">×</button>
+    <div class="product-modal-image-wrap">
+      <img id="modalProductImage" src="" alt="">
+    </div>
 
-    <img id="modalImage" class="modal-image" src="" alt="">
+    <div class="modal-product-info">
+      <h2 id="modalProductName"></h2>
+      <p id="modalProductColor"></p>
+      <p id="modalProductPrice"></p>
 
-    <h2 id="modalName"></h2>
+      <div class="modal-product-actions">
+        <button id="modalWishlistButton" class="modal-wishlist-button">
+          ♡
+        </button>
 
-    <p>
-      <strong>Color:</strong>
-      <span id="modalColor"></span>
-    </p>
-
-    <p>
-      <strong>Price:</strong>
-      <span id="modalPrice"></span> EGP
-    </p>
-
-    <button
-      id="modalWishlistButton"
-      class="wishlist-modal-button"
-      onclick="toggleCurrentWishlist()">
-      ♡ Add to Wishlist
-    </button>
-
-    <button
-      id="modalAddButton"
-      class="add-button"
-      onclick="addCurrentProduct()">
-      Add to Cart
-    </button>
+        <button id="modalAddButton" class="modal-add-button">
+          Add to Cart
+        </button>
+      </div>
+    </div>
 
   </div>
-
 </div>
 
 
 <!-- CART MODAL -->
-<div class="overlay" id="cartOverlay">
+<div id="cartModal" class="modal-overlay">
+  <div class="modal cart-modal">
 
-  <div class="modal">
-
-    <button class="close" onclick="closeCart()">×</button>
+    <button class="modal-close" onclick="closeCart()">×</button>
 
     <h2>Your Cart</h2>
 
@@ -187,19 +181,19 @@
 
     <div class="cart-summary">
 
-      <div>
+      <div class="summary-row">
         <span>Subtotal</span>
-        <strong><span id="cartSubtotal">0</span> EGP</strong>
+        <span id="cartSubtotal">0 EGP</span>
       </div>
 
-      <div>
+      <div class="summary-row">
         <span>Shipping Fee</span>
-        <strong><span id="cartShipping">0</span> EGP</strong>
+        <span id="cartShipping">0 EGP</span>
       </div>
 
-      <div class="cart-total">
+      <div class="summary-row total-row">
         <span>Total</span>
-        <strong><span id="cartTotal">0</span> EGP</strong>
+        <span id="cartTotal">0 EGP</span>
       </div>
 
     </div>
@@ -209,153 +203,127 @@
     </button>
 
   </div>
-
 </div>
 
 
 <!-- WISHLIST MODAL -->
-<div class="overlay" id="wishlistOverlay">
+<div id="wishlistModal" class="modal-overlay">
+  <div class="modal wishlist-modal">
 
-  <div class="modal">
+    <button class="modal-close" onclick="closeWishlist()">×</button>
 
-    <button class="close" onclick="closeWishlist()">×</button>
-
-    <h2>Your Wishlist ♡</h2>
+    <h2>Your Wishlist</h2>
 
     <div id="wishlistItems"></div>
 
   </div>
-
 </div>
 
 
 <!-- CHECKOUT MODAL -->
-<div class="overlay" id="checkoutOverlay">
+<div id="checkoutModal" class="modal-overlay">
+  <div class="modal checkout-modal">
 
-  <div class="modal">
-
-    <button class="close" onclick="closeCheckout()">×</button>
+    <button class="modal-close" onclick="closeCheckout()">×</button>
 
     <h2>Checkout</h2>
 
-    <form class="checkout-form" onsubmit="placeOrder(event)">
+    <div class="checkout-form">
 
-      <label for="customerName">Name</label>
-      <input id="customerName" type="text" required>
+      <label>
+        Name
+        <input type="text" id="checkoutName">
+      </label>
 
+      <label>
+        Phone Number
+        <input type="tel" id="checkoutPhone">
+      </label>
 
-      <label for="customerPhone">Phone</label>
-      <input id="customerPhone" type="tel" required>
+      <label>
+        Governorate
+        <select id="checkoutGovernorate" onchange="updateCheckoutTotal()">
+          <option value="">Select Governorate</option>
+          <option value="Alexandria">Alexandria</option>
+          <option value="Cairo">Cairo</option>
+          <option value="Giza">Giza</option>
+          <option value="Beheira">Beheira</option>
+          <option value="Dakahlia">Dakahlia</option>
+          <option value="Damietta">Damietta</option>
+          <option value="Gharbia">Gharbia</option>
+          <option value="Kafr El Sheikh">Kafr El Sheikh</option>
+          <option value="Monufia">Monufia</option>
+          <option value="Qalyubia">Qalyubia</option>
+          <option value="Sharqia">Sharqia</option>
+          <option value="Port Said">Port Said</option>
+          <option value="Suez">Suez</option>
+          <option value="Ismailia">Ismailia</option>
+          <option value="Aswan">Aswan</option>
+          <option value="Asyut">Asyut</option>
+          <option value="Beni Suef">Beni Suef</option>
+          <option value="Fayoum">Fayoum</option>
+          <option value="Luxor">Luxor</option>
+          <option value="Minya">Minya</option>
+          <option value="Qena">Qena</option>
+          <option value="Sohag">Sohag</option>
+          <option value="Red Sea">Red Sea</option>
+          <option value="North Sinai">North Sinai</option>
+          <option value="South Sinai">South Sinai</option>
+          <option value="Matrouh">Matrouh</option>
+          <option value="New Valley">New Valley</option>
+        </select>
+      </label>
 
+      <label>
+        Address
+        <textarea id="checkoutAddress"></textarea>
+      </label>
 
-      <label for="governorate">Governorate</label>
+      <label>
+        Payment Method
+        <select id="checkoutPayment">
+          <option value="Vodafone Cash">Vodafone Cash</option>
+        </select>
+      </label>
 
-      <select id="governorate" onchange="updateCheckoutShipping()" required>
-
-        <option value="">Choose</option>
-
-        <option value="Alexandria">Alexandria</option>
-
-        <option value="Cairo">Cairo</option>
-        <option value="Giza">Giza</option>
-
-        <option value="Beheira">Beheira</option>
-        <option value="Dakahlia">Dakahlia</option>
-        <option value="Damietta">Damietta</option>
-        <option value="Gharbia">Gharbia</option>
-        <option value="Kafr El Sheikh">Kafr El Sheikh</option>
-        <option value="Monufia">Monufia</option>
-        <option value="Qalyubia">Qalyubia</option>
-        <option value="Sharqia">Sharqia</option>
-
-        <option value="Port Said">Port Said</option>
-        <option value="Suez">Suez</option>
-        <option value="Ismailia">Ismailia</option>
-
-        <option value="Aswan">Aswan</option>
-        <option value="Asyut">Asyut</option>
-        <option value="Beni Suef">Beni Suef</option>
-        <option value="Fayoum">Fayoum</option>
-        <option value="Luxor">Luxor</option>
-        <option value="Minya">Minya</option>
-        <option value="Qena">Qena</option>
-        <option value="Sohag">Sohag</option>
-
-        <option value="Red Sea">Red Sea</option>
-
-        <option value="North Sinai">North Sinai</option>
-        <option value="South Sinai">South Sinai</option>
-
-        <option value="Matrouh">Matrouh</option>
-        <option value="New Valley">New Valley</option>
-      </select>
-
-
-      <label for="customerAddress">Address</label>
-      <input id="customerAddress" type="text" required>
-
-
-      <!-- PAYMENT NOTICE -->
       <div class="payment-notice">
-        Please transfer the full amount before placing your order
-        to secure your order.
+        Please transfer the full amount before placing your order to secure your order.
       </div>
-
 
       <div class="payment-box">
-
-        <strong>Payment Method</strong>
-
-        <br>
-
-        Vodafone Cash
-
-        <br>
-
-        <strong>01021755186</strong>
-
+        Vodafone Cash: <strong>01021755186</strong>
       </div>
 
-
-      <!-- CHECKOUT SUMMARY -->
       <div class="checkout-summary">
 
-        <div>
+        <div class="summary-row">
           <span>Subtotal</span>
-          <strong>
-            <span id="checkoutSubtotal">0</span> EGP
-          </strong>
+          <span id="checkoutSubtotal">0 EGP</span>
         </div>
 
-        <div>
+        <div class="summary-row">
           <span>Shipping Fee</span>
-          <strong>
-            <span id="checkoutShipping">0</span> EGP
-          </strong>
+          <span id="checkoutShipping">0 EGP</span>
         </div>
 
-        <div class="checkout-final-total">
+        <div class="summary-row total-row">
           <span>Total</span>
-          <strong>
-            <span id="checkoutTotal">0</span> EGP
-          </strong>
+          <span id="checkoutTotal">0 EGP</span>
         </div>
 
       </div>
 
-
-      <button class="place-order" type="submit">
+      <button class="whatsapp-button" onclick="placeOrder()">
         Send Order via WhatsApp
       </button>
 
-    </form>
+    </div>
 
   </div>
-
 </div>
 
 
-<!-- CUTE CART NOTIFICATION -->
+<!-- CART TOAST -->
 <div id="cartToast" class="cart-toast">
   <span class="toast-heart">♡</span>
   <span id="toastMessage">Added to your cart</span>
