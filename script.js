@@ -1,1421 +1,709 @@
-const whatsapp = "201021755186";
-
-const shippingRates = {
-  Alexandria: 50,
-  Delta: 80,
-  Cairo: 80,
-  Upper: 100,
-  RedSea: 120
-};
-
-let cart = JSON.parse(localStorage.getItem("israaCart")) || [];
-let wishlist = JSON.parse(localStorage.getItem("israaWishlist")) || [];
-
-let currentProduct = null;
-let currentGroup = null;
-let currentIndex = 0;
-
-/* =========================
-   PRODUCTS
-========================= */
-
-const productGroups = [
-
-  {
-    id: "crystal",
-    name: "Crystal Comfort Scarf",
-    price: 150,
-    products: [
-      {
-        color: "Mint Green",
-        image: "1789663443949.jpg"
-      },
-      {
-        color: "Lavender",
-        image: "1789663513275.jpg"
-      },
-      {
-        color: "Café",
-        image: "1789663143161.jpg"
-      },
-      {
-        color: "Slate Gray",
-        image: "slate-gray.jpg"
-      }
-    ]
-  },
-
-  {
-    id: "chiffon1",
-    name: "Crepe Chiffon Scarf",
-    price: 220,
-    products: [
-      {
-        color: "Taupe",
-        image: "1789653276516.jpg"
-      },
-      {
-        color: "Light Beige",
-        image: "1789666550479.jpg"
-      },
-      {
-        color: "Beige",
-        image: "1789666385502.jpg"
-      }
-    ]
-  },
-
-  {
-    id: "chiffon2",
-    name: "Crepe Chiffon Scarf",
-    price: 220,
-    products: [
-      {
-        color: "White",
-        image: "1789612810611.jpg"
-      },
-      {
-        color: "Off White",
-        image: "1789656243041.jpg"
-      },
-      {
-        color: "Ice Grey",
-        image: "1789656096412.jpg"
-      },
-      {
-        color: "Cream",
-        image: "cream.jpg"
-      }
-    ]
-  },
-
-  {
-    id: "chiffon3",
-    name: "Crepe Chiffon Scarf",
-    price: 220,
-    products: [
-      {
-        color: "Mint Green",
-        image: "1789656901442.jpg"
-      },
-      {
-        color: "Pistachio",
-        image: "1789657273597.jpg"
-      },
-      {
-        color: "Light Olive Green",
-        image: "Light.olive.green.jpg"
-      },
-      {
-        color: "Olive Green",
-        image: "1789658305384.jpg"
-      }
-    ]
-  },
-
-  {
-    id: "chiffon4",
-    name: "Crepe Chiffon Scarf",
-    price: 220,
-    products: [
-      {
-        color: "Baby Blue",
-        image: "1789661119267.jpg"
-      },
-      {
-        color: "Dusty Blue",
-        image: "1789653467598.jpg"
-      },
-      {
-        color: "Ocean Blue",
-        image: "1789653590293.jpg"
-      },
-      {
-        color: "Petroleum",
-        image: "1789609239720.jpg"
-      },
-      {
-        color: "Navy",
-        image: "1789661581244.jpg"
-      },
-      {
-        color: "Midnight",
-        image: "1789654089295.jpg"
-      }
-    ]
-  },
-
-  {
-    id: "chiffon5",
-    name: "Crepe Chiffon Scarf",
-    price: 220,
-    products: [
-      {
-        color: "Peach",
-        image: "1789662261446.jpg"
-      },
-      {
-        color: "Coral",
-        image: "1789662069402.jpg"
-      },
-      {
-        color: "Orange",
-        image: "1789609303020.jpg"
-      },
-      {
-        color: "Red",
-        image: "1789609437413.jpg"
-      },
-      {
-        color: "Caramel",
-        image: "1789670850781.jpg"
-      },
-      {
-        color: "Maroon",
-        image: "1789661509678.jpg"
-      }
-    ]
-  },
-
-  {
-    id: "chiffon6",
-    name: "Crepe Chiffon Scarf",
-    price: 220,
-    products: [
-      {
-        color: "Dusty Rose",
-        image: "1789659142918.jpg"
-      },
-      {
-        color: "Baby Pink",
-        image: "1789672026217.jpg"
-      },
-      {
-        color: "Rosewood",
-        image: "1789659236519 (1).jpg"
-      },
-      {
-        color: "Pink",
-        image: "1789659236519.jpg"
-      }
-    ]
-  },
-
-  {
-    id: "chiffon7",
-    name: "Crepe Chiffon Scarf",
-    price: 220,
-    products: [
-      {
-        color: "Dusty Grey",
-        image: "1789655859702.jpg"
-      },
-      {
-        color: "Grey",
-        image: "1789655856246.jpg"
-      }
-    ]
-  },
-
-  {
-    id: "chiffon8",
-    name: "Crepe Chiffon Scarf",
-    price: 220,
-    products: [
-      {
-        color: "Dark Mauve",
-        image: "1789664028182.jpg"
-      },
-      {
-        color: "Mulberry",
-        image: "1789672320095.jpg"
-      },
-      {
-        color: "Lavender",
-        image: "1789612119826.jpg"
-      },
-      {
-        color: "Ice Mauve",
-        image: "1789658699638.jpg"
-      },
-      {
-        color: "Aubergine",
-        image: "Aubergine.jpg"
-      }
-    ]
-  },
-
-  {
-    id: "cuffs",
-    name: "Wrist Cuffs",
-    price: 100,
-    products: [
-      {
-        color: "Sparkles",
-        image: "1789701688187.jpg"
-      },
-      {
-        color: "Lace",
-        image: "1789701369378.jpg"
-      },
-      {
-        color: "Tulle",
-        image: "1789701870086.jpg"
-      }
-    ]
-  }
-
-];
-
-
-/* =========================
-   STORAGE
-========================= */
-
-function saveCart() {
-  localStorage.setItem("israaCart", JSON.stringify(cart));
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-function saveWishlist() {
-  localStorage.setItem("israaWishlist", JSON.stringify(wishlist));
+html {
+  scroll-behavior: smooth;
 }
 
-
-/* =========================
-   COUNTS
-========================= */
-
-function updateCartCount() {
-  const el = document.getElementById("cartCount");
-
-  if (el) {
-    el.textContent = cart.length;
-  }
+body {
+  font-family: Georgia, "Times New Roman", serif;
+  background: #f5eee5;
+  color: #4b3327;
 }
 
-function updateWishlistCount() {
-  const el = document.getElementById("wishlistCount");
+/* HEADER */
 
-  if (el) {
-    el.textContent = wishlist.length;
-  }
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #eadccc;
+  border-bottom: 1px solid #d3bda8;
 }
 
-
-/* =========================
-   PRODUCT CATALOG
-========================= */
-
-function renderProductGroups() {
-
-  const container = document.getElementById("productGroups");
-
-  if (!container) return;
-
-  container.innerHTML = "";
-
-  /* Crystal */
-
-  const crystalTitle = document.createElement("h2");
-  crystalTitle.className = "section-title";
-  crystalTitle.textContent = "Crystal Comfort Scarf";
-
-  container.appendChild(crystalTitle);
-
-  renderGroup(productGroups[0], container);
-
-
-  /* Chiffon */
-
-  const chiffonTitle = document.createElement("h2");
-  chiffonTitle.className = "section-title";
-  chiffonTitle.textContent = "Crepe Chiffon Scarf";
-
-  container.appendChild(chiffonTitle);
-
-  productGroups.slice(1, 9).forEach(group => {
-    renderGroup(group, container);
-  });
-
-
-  /* Wrist Cuffs */
-
-  const cuffsTitle = document.createElement("h2");
-  cuffsTitle.className = "section-title";
-  cuffsTitle.textContent = "Wrist Cuffs";
-
-  container.appendChild(cuffsTitle);
-
-  renderGroup(productGroups[9], container);
+.header-inner {
+  max-width: 1200px;
+  margin: auto;
+  padding: 15px 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
 }
 
-
-function renderGroup(group, container) {
-
-  const groupDiv = document.createElement("div");
-  groupDiv.className = "product-group";
-
-  const windowDiv = document.createElement("div");
-  windowDiv.className = "group-window";
-
-  const track = document.createElement("div");
-  track.className = "group-track";
-
-  group.products.forEach((product, index) => {
-
-    const card = document.createElement("div");
-    card.className = "catalog-card";
-
-    const key = `${group.id}-${product.color}`;
-
-    const isWishlisted = wishlist.includes(key);
-
-    card.innerHTML = `
-      <button
-        class="card-heart ${isWishlisted ? "active" : ""}"
-        onclick="toggleWishlist('${group.id}', ${index})"
-        aria-label="Wishlist"
-      >
-        ${isWishlisted ? "♥" : "♡"}
-      </button>
-
-      <img
-        src="${product.image}"
-        alt="${product.color}"
-        onclick="openProduct('${group.id}', ${index})"
-        style="cursor:pointer;"
-      >
-
-      <div class="catalog-info">
-        <span>${product.color}</span>
-        <span>${group.price} EGP</span>
-
-        <button onclick="openProduct('${group.id}', ${index})">
-          View
-        </button>
-      </div>
-    `;
-
-    track.appendChild(card);
-  });
-
-  windowDiv.appendChild(track);
-  groupDiv.appendChild(windowDiv);
-
-  container.appendChild(groupDiv);
+.logo {
+  font-size: 25px;
+  font-weight: bold;
+  color: #593c2e;
 }
 
-
-/* =========================
-   PRODUCT MODAL
-========================= */
-
-function openProduct(groupId, index) {
-
-  const group = productGroups.find(g => g.id === groupId);
-
-  if (!group || !group.products[index]) return;
-
-  currentGroup = group;
-  currentIndex = index;
-  currentProduct = group.products[index];
-
-  const overlay = document.getElementById("productOverlay");
-
-  const image = document.getElementById("modalImage");
-  const name = document.getElementById("modalName");
-  const color = document.getElementById("modalColor");
-  const price = document.getElementById("modalPrice");
-  const wishlistButton = document.getElementById("modalWishlistButton");
-  const addButton = document.getElementById("modalAddButton");
-
-  if (!overlay) return;
-
-  if (image) {
-    image.src = currentProduct.image;
-    image.alt = currentProduct.color;
-  }
-
-  if (name) {
-    name.textContent = group.name;
-  }
-
-  if (color) {
-    color.textContent = currentProduct.color;
-  }
-
-  if (price) {
-    price.textContent = `${group.price} EGP`;
-  }
-
-  const key = `${group.id}-${currentProduct.color}`;
-  const soldOut = currentProduct.soldOut === true;
-
-  if (wishlistButton) {
-
-    wishlistButton.textContent =
-      wishlist.includes(key)
-        ? "Remove from Wishlist"
-        : "Add to Wishlist";
-
-    wishlistButton.classList.toggle(
-      "active",
-      wishlist.includes(key)
-    );
-  }
-
-  if (addButton) {
-
-    addButton.disabled = soldOut;
-
-    if (soldOut) {
-      addButton.textContent = "Sold Out";
-    } else {
-      addButton.textContent = "Add to Cart";
-    }
-  }
-
-  overlay.classList.add("active");
+nav {
+  display: flex;
+  gap: 25px;
 }
 
-
-function closeProduct() {
-
-  const overlay = document.getElementById("productOverlay");
-
-  if (overlay) {
-    overlay.classList.remove("active");
-  }
-
-  currentProduct = null;
-  currentGroup = null;
+nav a {
+  text-decoration: none;
+  color: #593c2e;
+  font-size: 15px;
 }
 
-
-function addCurrentProductToCart() {
-
-  if (!currentGroup || !currentProduct) return;
-
-  if (currentProduct.soldOut) return;
-
-  addToCart(
-    currentGroup.id,
-    currentIndex
-  );
-
-  closeProduct();
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
-
-/* =========================
-   WISHLIST
-========================= */
-
-function toggleWishlist(groupId, index) {
-
-  const group = productGroups.find(g => g.id === groupId);
-
-  if (!group || !group.products[index]) return;
-
-  const product = group.products[index];
-
-  const key = `${group.id}-${product.color}`;
-
-  if (wishlist.includes(key)) {
-
-    wishlist = wishlist.filter(item => item !== key);
-
-  } else {
-
-    wishlist.push(key);
-
-  }
-
-  saveWishlist();
-  updateWishlistCount();
-  renderProductGroups();
-
-  if (
-    currentGroup &&
-    currentGroup.id === groupId &&
-    currentIndex === index
-  ) {
-
-    const button =
-      document.getElementById("modalWishlistButton");
-
-    if (button) {
-
-      const active = wishlist.includes(key);
-
-      button.textContent =
-        active
-          ? "Remove from Wishlist"
-          : "Add to Wishlist";
-
-      button.classList.toggle("active", active);
-    }
-  }
+.wishlist-button,
+.cart-button {
+  border: 1px solid #b99d84;
+  background: #f7f0e8;
+  color: #593c2e;
+  padding: 8px 12px;
+  border-radius: 20px;
+  cursor: pointer;
 }
 
-
-function openWishlist() {
-
-  const overlay = document.getElementById("wishlistOverlay");
-  const container = document.getElementById("wishlistItems");
-
-  if (!overlay || !container) return;
-
-  container.innerHTML = "";
-
-  if (wishlist.length === 0) {
-
-    container.innerHTML = `
-      <p>Your wishlist is empty.</p>
-    `;
-
-    overlay.classList.add("active");
-    return;
-  }
-
-  wishlist.forEach(key => {
-
-    const separator = key.indexOf("-");
-
-    const groupId = key.substring(0, separator);
-    const color = key.substring(separator + 1);
-
-    const group = productGroups.find(g => g.id === groupId);
-
-    if (!group) return;
-
-    const index = group.products.findIndex(
-      product => product.color === color
-    );
-
-    if (index === -1) return;
-
-    const product = group.products[index];
-
-    const item = document.createElement("div");
-    item.className = "wishlist-item";
-
-    item.innerHTML = `
-      <img
-        src="${product.image}"
-        alt="${product.color}"
-      >
-
-      <div class="wishlist-item-info">
-        <strong>${group.name}</strong>
-        <p>${product.color}</p>
-        <p>${group.price} EGP</p>
-      </div>
-
-      <button
-        class="wishlist-remove"
-        onclick="toggleWishlist('${group.id}', ${index}); openWishlist();"
-      >
-        Remove
-      </button>
-    `;
-
-    container.appendChild(item);
-  });
-
-  overlay.classList.add("active");
+.wishlist-button {
+  font-size: 18px;
 }
 
-
-function closeWishlist() {
-
-  const overlay = document.getElementById("wishlistOverlay");
-
-  if (overlay) {
-    overlay.classList.remove("active");
-  }
+.cart-button {
+  font-size: 15px;
 }
 
+/* HERO */
 
-/* =========================
-   CART
-========================= */
+.hero {
+  min-height: 75vh;
+  background:
+    linear-gradient(
+      rgba(65, 43, 32, 0.25),
+      rgba(65, 43, 32, 0.35)
+    ),
+    url("1789611351628.jpg")
+    center / cover no-repeat;
 
-function addToCart(groupId, index) {
-
-  const group = productGroups.find(g => g.id === groupId);
-
-  if (!group || !group.products[index]) return;
-
-  const product = group.products[index];
-
-  if (product.soldOut) return;
-
-  const key = `${group.id}-${product.color}`;
-
-  cart.push({
-    key: key,
-    groupId: group.id,
-    color: product.color,
-    image: product.image,
-    name: group.name,
-    price: group.price
-  });
-
-  saveCart();
-  updateCartCount();
-
-  showCartToast(`${product.color} added to your cart ♡`);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 20px;
 }
 
-
-function removeFromCart(index) {
-
-  if (index < 0 || index >= cart.length) return;
-
-  cart.splice(index, 1);
-
-  saveCart();
-  updateCartCount();
-
-  renderCart();
+.hero-content {
+  color: white;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
 }
 
-
-function openCart() {
-
-  const overlay = document.getElementById("cartOverlay");
-
-  if (!overlay) return;
-
-  renderCart();
-
-  overlay.classList.add("active");
+.hero h1 {
+  font-size: clamp(40px, 7vw, 75px);
+  margin-bottom: 15px;
 }
 
-
-function closeCart() {
-
-  const overlay = document.getElementById("cartOverlay");
-
-  if (overlay) {
-    overlay.classList.remove("active");
-  }
+.hero p {
+  font-size: 20px;
+  margin-bottom: 30px;
 }
 
-
-function getCartSubtotal() {
-
-  return cart.reduce(
-    (total, item) => total + Number(item.price || 0),
-    0
-  );
+.hero-button {
+  display: inline-block;
+  background: #6a4a38;
+  color: white;
+  text-decoration: none;
+  padding: 13px 25px;
+  border-radius: 25px;
 }
 
+/* SECTIONS */
 
-function renderCart() {
-
-  const container = document.getElementById("cartItems");
-  const subtotalEl = document.getElementById("cartSubtotal");
-
-  if (!container) return;
-
-  container.innerHTML = "";
-
-  if (cart.length === 0) {
-
-    container.innerHTML = `
-      <p>Your cart is empty.</p>
-    `;
-
-    if (subtotalEl) {
-      subtotalEl.textContent = "0 EGP";
-    }
-
-    return;
-  }
-
-  cart.forEach((item, index) => {
-
-    const div = document.createElement("div");
-    div.className = "cart-item";
-
-    div.innerHTML = `
-      <img
-        src="${item.image}"
-        alt="${item.color}"
-      >
-
-      <div>
-        <strong>${item.name}</strong>
-        <p>${item.color}</p>
-        <p>${item.price} EGP</p>
-
-        <button onclick="removeFromCart(${index})">
-          Remove
-        </button>
-      </div>
-    `;
-
-    container.appendChild(div);
-  });
-
-  const subtotal = getCartSubtotal();
-
-  if (subtotalEl) {
-    subtotalEl.textContent = `${subtotal} EGP`;
-  }
+.section {
+  max-width: 1200px;
+  margin: auto;
+  padding: 65px 25px;
 }
 
-
-/* =========================
-   TOAST
-========================= */
-
-function showCartToast(message) {
-
-  const toast = document.getElementById("cartToast");
-  const text = document.getElementById("cartToastText");
-
-  if (!toast) return;
-
-  if (text) {
-    text.textContent = message;
-  }
-
-  toast.classList.add("show");
-
-  setTimeout(() => {
-    toast.classList.remove("show");
-  }, 2500);
+.section-title {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 35px;
+  color: #593c2e;
 }
 
+/* BEST SELLERS */
 
-/* =========================
-   CHECKOUT
-========================= */
-
-function openCheckout() {
-
-  if (cart.length === 0) return;
-
-  closeCart();
-
-  const overlay = document.getElementById("checkoutOverlay");
-
-  if (!overlay) return;
-
-  updateCheckoutSummary();
-
-  overlay.classList.add("active");
+.products {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
 }
 
-
-function closeCheckout() {
-
-  const overlay = document.getElementById("checkoutOverlay");
-
-  if (overlay) {
-    overlay.classList.remove("active");
-  }
+.product-card {
+  background: #fffaf5;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 18px rgba(75, 51, 39, 0.10);
 }
 
-
-function getShippingRate(governorate) {
-
-  if (governorate === "Alexandria") {
-    return shippingRates.Alexandria;
-  }
-
-  if (
-    governorate === "Cairo" ||
-    governorate === "Giza"
-  ) {
-    return shippingRates.Cairo;
-  }
-
-  if (
-    governorate === "Upper Egypt" ||
-    governorate === "Upper Nile"
-  ) {
-    return shippingRates.Upper;
-  }
-
-  if (governorate === "Red Sea") {
-    return shippingRates.RedSea;
-  }
-
-  return shippingRates.Delta;
+.product-card img {
+  width: 100%;
+  aspect-ratio: 1 / 1.25;
+  object-fit: cover;
+  display: block;
 }
 
+/* PRODUCT GROUPS */
 
-function updateCheckoutSummary() {
-
-  const governorate =
-    document.getElementById("governorate");
-
-  const subtotal = getCartSubtotal();
-
-  let shipping = 0;
-
-  if (governorate && governorate.value) {
-    shipping = getShippingRate(governorate.value);
-  }
-
-  const total = subtotal + shipping;
-
-  const subtotalEl =
-    document.getElementById("checkoutSubtotal");
-
-  const shippingEl =
-    document.getElementById("shippingFee");
-
-  const totalEl =
-    document.getElementById("checkoutTotal");
-
-  if (subtotalEl) {
-    subtotalEl.textContent = `${subtotal} EGP`;
-  }
-
-  if (shippingEl) {
-    shippingEl.textContent = `${shipping} EGP`;
-  }
-
-  if (totalEl) {
-    totalEl.textContent = `${total} EGP`;
-  }
+.product-group {
+  margin-bottom: 55px;
 }
 
-
-/* =========================
-   PLACE ORDER
-========================= */
-
-function placeOrder() {
-
-  if (cart.length === 0) return;
-
-  const name =
-    document.getElementById("customerName")?.value.trim();
-
-  const phone =
-    document.getElementById("customerPhone")?.value.trim();
-
-  const governorate =
-    document.getElementById("governorate")?.value;
-
-  const address =
-    document.getElementById("customerAddress")?.value.trim();
-
-  const payment =
-    document.getElementById("paymentMethod")?.value;
-
-  if (
-    !name ||
-    !phone ||
-    !governorate ||
-    !address ||
-    !payment
-  ) {
-
-    alert("Please fill in all required fields.");
-    return;
-  }
-
-  const subtotal = getCartSubtotal();
-
-  const shipping = getShippingRate(governorate);
-
-  const total = subtotal + shipping;
-
-  let message = "";
-
-  message += "Hello Israa Boutique, I would like to place an order.%0A%0A";
-
-  message += "Order:%0A";
-
-  cart.forEach((item, index) => {
-
-    message +=
-      `${index + 1}. ${item.name} - ${item.color} - ${item.price} EGP%0A`;
-  });
-
-  message += `%0ASubtotal: ${subtotal} EGP%0A`;
-  message += `Shipping Fee: ${shipping} EGP%0A`;
-  message += `Total: ${total} EGP%0A%0A`;
-
-  message += `Name: ${encodeURIComponent(name)}%0A`;
-  message += `Phone: ${encodeURIComponent(phone)}%0A`;
-  message += `Governorate: ${encodeURIComponent(governorate)}%0A`;
-  message += `Address: ${encodeURIComponent(address)}%0A`;
-  message += `Payment Method: ${encodeURIComponent(payment)}%0A`;
-
-  const url =
-    `https://wa.me/${whatsapp}?text=${message}`;
-
-  window.open(url, "_blank");
+.group-window {
+  overflow: hidden;
+  width: 100%;
 }
 
-
-/* =========================
-   QUIZ
-========================= */
-
-function getQuizResult() {
-
-  const answers = {
-
-    undertone:
-      document.querySelector(
-        'input[name="undertone"]:checked'
-      )?.value,
-
-    brightness:
-      document.querySelector(
-        'input[name="brightness"]:checked'
-      )?.value,
-
-    palette:
-      document.querySelector(
-        'input[name="palette"]:checked'
-      )?.value
-
-  };
-
-  if (
-    !answers.undertone ||
-    !answers.brightness ||
-    !answers.palette
-  ) {
-
-    alert("Please answer all questions first.");
-    return;
-  }
-
-  const scores = {};
-
-  const addScore = (colors, points) => {
-
-    colors.forEach(color => {
-
-      scores[color] =
-        (scores[color] || 0) + points;
-
-    });
-  };
-
-
-  /* Undertone */
-
-  if (answers.undertone === "warm") {
-
-    addScore(
-      ["Café", "Caramel", "Sahara", "Beige"],
-      3
-    );
-
-    addScore(
-      ["Maroon", "Olive Green", "Petroleum"],
-      2
-    );
-  }
-
-  if (answers.undertone === "cool") {
-
-    addScore(
-      ["Lavender", "Baby Blue", "Dusty Blue", "Ice Mauve"],
-      3
-    );
-
-    addScore(
-      ["Navy", "Midnight", "Aubergine", "Mulberry"],
-      2
-    );
-  }
-
-  if (answers.undertone === "neutral") {
-
-    addScore(
-      ["Cream", "Off White", "Taupe", "Dusty Rose"],
-      3
-    );
-
-    addScore(
-      ["Dark Mauve", "Rosewood", "Slate Gray", "Grey"],
-      2
-    );
-  }
-
-
-  /* Brightness */
-
-  if (answers.brightness === "light") {
-
-    addScore(
-      [
-        "Cream",
-        "Off White",
-        "Beige",
-        "Light Beige",
-        "Lavender",
-        "Baby Blue",
-        "Dusty Blue",
-        "Mint Green",
-        "Dusty Rose",
-        "Peach"
-      ],
-      2
-    );
-  }
-
-  if (answers.brightness === "dark") {
-
-    addScore(
-      [
-        "Navy",
-        "Midnight",
-        "Aubergine",
-        "Mulberry",
-        "Maroon",
-        "Petroleum",
-        "Dark Mauve",
-        "Rosewood",
-        "Slate Gray",
-        "Olive Green"
-      ],
-      2
-    );
-  }
-
-
-  /* Palette */
-
-  if (answers.palette === "earthy") {
-
-    addScore(
-      [
-        "Café",
-        "Caramel",
-        "Sahara",
-        "Beige",
-        "Taupe",
-        "Maroon"
-      ],
-      4
-    );
-  }
-
-  if (answers.palette === "soft") {
-
-    addScore(
-      [
-        "Lavender",
-        "Baby Blue",
-        "Dusty Blue",
-        "Ice Mauve",
-        "Cream",
-        "Dusty Rose"
-      ],
-      4
-    );
-  }
-
-  if (answers.palette === "green") {
-
-    addScore(
-      [
-        "Mint Green",
-        "Pistachio",
-        "Olive Green",
-        "Light Olive Green"
-      ],
-      5
-    );
-  }
-
-  if (answers.palette === "deep") {
-
-    addScore(
-      [
-        "Maroon",
-        "Mulberry",
-        "Aubergine",
-        "Midnight",
-        "Navy",
-        "Petroleum"
-      ],
-      4
-    );
-  }
-
-
-  const sortedColors =
-    Object.entries(scores)
-      .sort((a, b) => b[1] - a[1])
-      .map(entry => entry[0]);
-
-
-  let recommendedColor =
-    sortedColors[0];
-
-  let recommendedGroup = null;
-  let recommendedIndex = -1;
-
-
-  for (const color of sortedColors) {
-
-    for (const group of productGroups) {
-
-      const index =
-        group.products.findIndex(
-          product => product.color === color
-        );
-
-      if (index !== -1) {
-
-        recommendedColor = color;
-        recommendedGroup = group;
-        recommendedIndex = index;
-
-        break;
-      }
-    }
-
-    if (recommendedGroup) break;
-  }
-
-
-  if (
-    !recommendedGroup ||
-    recommendedIndex === -1
-  ) {
-    return;
-  }
-
-
-  const product =
-    recommendedGroup.products[recommendedIndex];
-
-  const result =
-    document.getElementById("quizResult");
-
-  const resultImage =
-    document.getElementById("quizResultImage");
-
-  const resultName =
-    document.getElementById("quizResultName");
-
-  const resultColor =
-    document.getElementById("quizResultColor");
-
-  const viewButton =
-    document.getElementById("quizViewButton");
-
-
-  if (result) {
-    result.classList.add("active");
-  }
-
-  if (resultImage) {
-    resultImage.src = product.image;
-    resultImage.alt = recommendedColor;
-  }
-
-  if (resultName) {
-    resultName.textContent = recommendedGroup.name;
-  }
-
-  if (resultColor) {
-    resultColor.textContent = recommendedColor;
-  }
-
-  if (viewButton) {
-
-    viewButton.onclick = function () {
-
-      openProduct(
-        recommendedGroup.id,
-        recommendedIndex
-      );
-
-    };
-  }
+.group-track {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
 }
 
-
-/* =========================
-   MODAL CLOSE
-========================= */
-
-function closeOverlayById(id) {
-
-  const overlay = document.getElementById(id);
-
-  if (overlay) {
-    overlay.classList.remove("active");
-  }
+.catalog-card {
+  position: relative;
+  background: #fffaf5;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 18px rgba(75, 51, 39, 0.10);
 }
 
-
-/* =========================
-   SWIPE SUPPORT
-========================= */
-
-let touchStartX = 0;
-let touchEndX = 0;
-
-function handleSwipe() {
-
-  if (!currentGroup) return;
-
-  const difference =
-    touchEndX - touchStartX;
-
-  if (Math.abs(difference) < 50) return;
-
-  if (difference < 0) {
-
-    currentIndex++;
-
-    if (
-      currentIndex >=
-      currentGroup.products.length
-    ) {
-      currentIndex = 0;
-    }
-
-  } else {
-
-    currentIndex--;
-
-    if (currentIndex < 0) {
-      currentIndex =
-        currentGroup.products.length - 1;
-    }
-  }
-
-  openProduct(
-    currentGroup.id,
-    currentIndex
-  );
+.catalog-card img {
+  width: 100%;
+  aspect-ratio: 1 / 1.25;
+  object-fit: cover;
+  display: block;
 }
 
+.catalog-info {
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
 
-document.addEventListener(
-  "touchstart",
-  function (event) {
+.catalog-info span {
+  font-size: 14px;
+  color: #755b49;
+}
 
-    touchStartX =
-      event.changedTouches[0].screenX;
+.catalog-info button {
+  margin-top: 8px;
+  border: none;
+  background: #6a4a38;
+  color: white;
+  padding: 10px;
+  border-radius: 20px;
+  cursor: pointer;
+}
 
-  },
-  { passive: true }
-);
+.catalog-info button:hover {
+  background: #593c2e;
+}
 
+/* WISHLIST HEART */
 
-document.addEventListener(
-  "touchend",
-  function (event) {
+.card-heart {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 38px;
+  height: 38px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 250, 245, 0.92);
+  color: #6a4a38;
+  font-size: 22px;
+  cursor: pointer;
+  z-index: 2;
+}
 
-    touchEndX =
-      event.changedTouches[0].screenX;
+.card-heart.active {
+  color: #8a493b;
+}
 
-    const overlay =
-      document.getElementById("productOverlay");
+/* SOLD OUT */
 
-    if (
-      overlay &&
-      overlay.classList.contains("active")
-    ) {
-      handleSwipe();
-    }
+.sold-out {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #593c2e;
+  color: white;
+  padding: 7px 10px;
+  border-radius: 15px;
+  font-size: 11px;
+  letter-spacing: 1px;
+}
 
-  },
-  { passive: true }
-);
+.sold-out-button {
+  background: #b9a89b !important;
+  cursor: not-allowed !important;
+}
 
+/* QUIZ */
 
-/* =========================
-   INITIALIZE
-========================= */
+.quiz-section {
+  background: #eee1d3;
+  max-width: 100%;
+}
 
-document.addEventListener(
-  "DOMContentLoaded",
-  function () {
+.quiz-box {
+  max-width: 650px;
+  margin: auto;
+  background: #fffaf5;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(75, 51, 39, 0.10);
+}
 
-    renderProductGroups();
+.quiz-question {
+  margin-bottom: 28px;
+}
 
-    updateCartCount();
+.quiz-question h3 {
+  margin-bottom: 15px;
+  font-size: 18px;
+  color: #593c2e;
+}
 
-    updateWishlistCount();
+.quiz-question label {
+  display: block;
+  padding: 10px 12px;
+  margin: 7px 0;
+  border: 1px solid #dfcdbb;
+  border-radius: 12px;
+  cursor: pointer;
+  background: #f9f3ec;
+}
 
+.quiz-question label:hover {
+  background: #f1e4d7;
+}
 
-    const governorate =
-      document.getElementById("governorate");
+.quiz-question input {
+  margin-right: 8px;
+}
 
-    if (governorate) {
+.quiz-button {
+  width: 100%;
+  border: none;
+  background: #6a4a38;
+  color: white;
+  padding: 14px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 15px;
+}
 
-      governorate.addEventListener(
-        "change",
-        updateCheckoutSummary
-      );
+.quiz-result {
+  display: none;
+  margin-top: 25px;
+  text-align: center;
+}
 
-    }
+.quiz-result.active {
+  display: block;
+}
 
+.quiz-result img {
+  width: 220px;
+  max-width: 100%;
+  aspect-ratio: 1 / 1.25;
+  object-fit: cover;
+  border-radius: 15px;
+  margin: 15px auto;
+  display: block;
+}
 
-    /* Make inline HTML buttons
-       explicitly available globally */
+.quiz-result h3 {
+  font-size: 21px;
+  margin-bottom: 8px;
+}
 
-    window.openProduct = openProduct;
-    window.closeProduct = closeProduct;
+.quiz-result p {
+  margin: 6px 0;
+}
 
-    window.toggleWishlist = toggleWishlist;
-    window.openWishlist = openWishlist;
-    window.closeWishlist = closeWishlist;
+.quiz-view-button {
+  display: inline-block;
+  margin-top: 12px;
+  border: none;
+  background: #6a4a38;
+  color: white;
+  padding: 11px 25px;
+  border-radius: 25px;
+  cursor: pointer;
+}
 
-    window.addToCart = addToCart;
-    window.removeFromCart = removeFromCart;
-    window.openCart = openCart;
-    window.closeCart = closeCart;
+/* MODALS */
 
-    window.openCheckout = openCheckout;
-    window.closeCheckout = closeCheckout;
-    window.placeOrder = placeOrder;
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(45, 30, 22, 0.55);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 2000;
+}
 
-    window.addCurrentProductToCart =
-      addCurrentProductToCart;
+.overlay.active {
+  display: flex;
+}
 
-    window.getQuizResult =
-      getQuizResult;
+.modal {
+  position: relative;
+  width: min(500px, 100%);
+  max-height: 90vh;
+  overflow-y: auto;
+  background: #fffaf5;
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+}
 
-    window.closeOverlayById =
-      closeOverlayById;
+.close {
+  position: absolute;
+  top: 12px;
+  right: 15px;
+  border: none;
+  background: none;
+  font-size: 30px;
+  color: #593c2e;
+  cursor: pointer;
+}
 
+.modal-image {
+  width: 100%;
+  max-height: 55vh;
+  object-fit: contain;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.modal h2 {
+  margin-bottom: 12px;
+}
+
+.modal p {
+  margin: 8px 0;
+}
+
+/* PRODUCT MODAL BUTTONS */
+
+.add-button,
+.checkout-button,
+.place-order,
+.wishlist-modal-button {
+  width: 100%;
+  border: none;
+  background: #6a4a38;
+  color: white;
+  padding: 13px;
+  border-radius: 25px;
+  cursor: pointer;
+  margin-top: 12px;
+  font-size: 15px;
+}
+
+.wishlist-modal-button {
+  background: #eadccc;
+  color: #593c2e;
+}
+
+.wishlist-modal-button.active {
+  background: #6a4a38;
+  color: white;
+}
+
+.add-button:disabled {
+  background: #b9a89b;
+  cursor: not-allowed;
+}
+
+/* CART */
+
+#cartItems {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.cart-item {
+  display: flex;
+  gap: 12px;
+  padding: 12px;
+  background: #f5eee5;
+  border-radius: 12px;
+}
+
+.cart-item img {
+  width: 80px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.cart-item p {
+  margin: 4px 0;
+}
+
+.cart-item button {
+  border: none;
+  background: transparent;
+  color: #8a493b;
+  cursor: pointer;
+  padding: 0;
+}
+
+.cart-summary,
+.checkout-summary {
+  margin-top: 20px;
+}
+
+.cart-summary > div,
+.checkout-summary > div {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+}
+
+.cart-total,
+.checkout-final-total {
+  margin-top: 8px;
+  padding-top: 12px !important;
+  border-top: 1px solid #d3bda8;
+  font-size: 19px;
+  font-weight: bold;
+}
+
+/* WISHLIST */
+
+#wishlistItems {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.wishlist-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background: #f5eee5;
+  border-radius: 12px;
+}
+
+.wishlist-item img {
+  width: 75px;
+  height: 95px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.wishlist-item-info {
+  flex: 1;
+}
+
+.wishlist-item-info p {
+  margin: 4px 0;
+}
+
+.wishlist-remove {
+  border: none;
+  background: none;
+  color: #8a493b;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+/* CHECKOUT */
+
+.checkout-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.checkout-form label {
+  margin-top: 8px;
+  font-size: 14px;
+}
+
+.checkout-form input,
+.checkout-form select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #cdb9a5;
+  border-radius: 10px;
+  background: white;
+  color: #4b3327;
+  font-size: 15px;
+}
+
+.payment-notice {
+  margin-top: 15px;
+  padding: 14px;
+  background: #f1e4d7;
+  border-left: 4px solid #6a4a38;
+  border-radius: 10px;
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+.payment-box {
+  margin-top: 10px;
+  padding: 15px;
+  background: #f1e4d7;
+  border-radius: 12px;
+  line-height: 1.8;
+}
+
+/* CART TOAST */
+
+.cart-toast {
+  position: fixed;
+  left: 50%;
+  bottom: 30px;
+  transform: translate(-50%, 25px);
+  background: #fffaf5;
+  color: #593c2e;
+  padding: 13px 20px;
+  border-radius: 30px;
+  box-shadow: 0 8px 30px rgba(75, 51, 39, 0.20);
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 5000;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  border: 1px solid #dfcdbb;
+}
+
+.cart-toast.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, 0);
+}
+
+.toast-heart {
+  font-size: 21px;
+  color: #8a493b;
+}
+
+/* FOOTER */
+
+footer {
+  text-align: center;
+  padding: 30px 20px;
+  background: #eadccc;
+  color: #593c2e;
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+  .header-inner {
+    padding: 12px 15px;
+    gap: 8px;
   }
-);
 
+  .logo {
+    font-size: 19px;
+  }
 
-/* In case the HTML loads
-   before DOMContentLoaded */
+  nav {
+    display: none;
+  }
 
-window.openProduct = openProduct;
-window.closeProduct = closeProduct;
+  .wishlist-button,
+  .cart-button {
+    padding: 7px 10px;
+    font-size: 12px;
+  }
 
-window.toggleWishlist = toggleWishlist;
-window.openWishlist = openWishlist;
-window.closeWishlist = closeWishlist;
+  .wishlist-button {
+    font-size: 16px;
+  }
 
-window.addToCart = addToCart;
-window.removeFromCart = removeFromCart;
-window.openCart = openCart;
-window.closeCart = closeCart;
+  .hero {
+    min-height: 70vh;
+  }
 
-window.openCheckout = openCheckout;
-window.closeCheckout = closeCheckout;
-window.placeOrder = placeOrder;
+  .hero h1 {
+    font-size: 42px;
+  }
 
-window.addCurrentProductToCart =
-  addCurrentProductToCart;
+  .hero p {
+    font-size: 16px;
+  }
 
-window.getQuizResult =
-  getQuizResult;
+  .section {
+    padding: 45px 15px;
+  }
+
+  .section-title {
+    font-size: 27px;
+  }
+
+  .products {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .group-track {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .catalog-info {
+    padding: 10px;
+  }
+
+  .catalog-info span {
+    font-size: 12px;
+  }
+
+  .catalog-info button {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  .quiz-box {
+    padding: 20px;
+  }
+
+  .quiz-question h3 {
+    font-size: 16px;
+  }
+
+  .modal {
+    padding: 20px;
+  }
+
+  .modal-image {
+    max-height: 50vh;
+  }
+
+  .cart-toast {
+    bottom: 20px;
+    width: max-content;
+    max-width: calc(100% - 30px);
+  }
+}
