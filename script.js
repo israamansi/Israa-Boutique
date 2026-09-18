@@ -38,30 +38,6 @@ const shippingRates = {
 };
 
 
-const bestSellers = [
-  {
-    id: "best1",
-    name: "Best Seller",
-    image: "1789657752151.jpg"
-  },
-  {
-    id: "best2",
-    name: "Best Seller",
-    image: "1789656317695.jpg"
-  },
-  {
-    id: "best3",
-    name: "Best Seller",
-    image: "1789663052943.jpg"
-  },
-  {
-    id: "best4",
-    name: "Best Seller",
-    image: "1789664028182.jpg"
-  }
-];
-
-
 const productGroups = [
 
   {
@@ -329,6 +305,29 @@ const productGroups = [
         soldOut: false
       }
     ]
+  },
+
+  {
+    id: "wristCuffs",
+    name: "Wrist Cuffs",
+    price: 100,
+    colors: [
+      {
+        color: "Sparkles",
+        image: "1789701688187.jpg",
+        soldOut: false
+      },
+      {
+        color: "Lace",
+        image: "1789701369378.jpg",
+        soldOut: false
+      },
+      {
+        color: "Tulle",
+        image: "1789701870086.jpg",
+        soldOut: false
+      }
+    ]
   }
 
 ];
@@ -342,34 +341,6 @@ let wishlist =
 
 let currentGroup = null;
 let currentIndex = 0;
-
-
-/* BEST SELLERS */
-
-function renderBestSellers() {
-
-  const container =
-    document.getElementById("productsContainer");
-
-  if (!container) return;
-
-  container.innerHTML = "";
-
-  bestSellers.forEach(product => {
-
-    const card =
-      document.createElement("div");
-
-    card.className = "product-card";
-
-    card.innerHTML = `
-      <img src="${product.image}" alt="${product.name}">
-    `;
-
-    container.appendChild(card);
-
-  });
-}
 
 
 /* PRODUCT CATALOG */
@@ -414,7 +385,7 @@ function renderProductGroups() {
 
 
   productGroups
-    .slice(1)
+    .slice(1, 9)
     .forEach(group => {
 
       createProductWindow(
@@ -423,6 +394,24 @@ function renderProductGroups() {
       );
 
     });
+
+
+  const wristCuffsTitle =
+    document.createElement("h2");
+
+  wristCuffsTitle.className =
+    "section-title";
+
+  wristCuffsTitle.textContent =
+    "Wrist Cuffs";
+
+  catalog.appendChild(wristCuffsTitle);
+
+
+  createProductWindow(
+    catalog,
+    productGroups[9]
+  );
 
 }
 
@@ -1888,8 +1877,6 @@ function getRecommendation() {
 document.addEventListener(
   "DOMContentLoaded",
   () => {
-
-    renderBestSellers();
 
     renderProductGroups();
 
