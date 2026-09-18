@@ -2,8 +2,10 @@ const whatsapp = "201021755186";
 
 const shippingRates = {
   Alexandria: 50,
+
   Cairo: 80,
   Giza: 80,
+
   Beheira: 80,
   Dakahlia: 80,
   Damietta: 80,
@@ -12,9 +14,11 @@ const shippingRates = {
   Monufia: 80,
   Qalyubia: 80,
   Sharqia: 80,
+
   "Port Said": 80,
   Suez: 80,
   Ismailia: 80,
+
   Aswan: 100,
   Asyut: 100,
   "Beni Suef": 100,
@@ -23,9 +27,12 @@ const shippingRates = {
   Minya: 100,
   Qena: 100,
   Sohag: 100,
+
   "Red Sea": 120,
+
   "North Sinai": 100,
   "South Sinai": 120,
+
   Matrouh: 100,
   "New Valley": 100
 };
@@ -37,24 +44,55 @@ const productGroups = [
     id: "crystal",
     name: "Crystal Comfort Scarf",
     price: 150,
-    items: [
-      { color: "Mint Green", image: "1789663443949.jpg", soldOut: false },
-      { color: "Lavender", image: "1789663513275.jpg", soldOut: false },
-      { color: "Café", image: "1789663143161.jpg", soldOut: false },
-      { color: "Slate Gray", image: "slate-gray.jpg", soldOut: false }
+    colors: [
+      {
+        color: "Mint Green",
+        image: "1789663443949.jpg",
+        soldOut: false
+      },
+      {
+        color: "Lavender",
+        image: "1789663513275.jpg",
+        soldOut: false
+      },
+      {
+        color: "Café",
+        image: "1789663143161.jpg",
+        soldOut: false
+      },
+      {
+        color: "Slate Gray",
+        image: "slate-gray.jpg",
+        soldOut: false
+      }
     ]
   },
-
 
   {
     id: "chiffon1",
     name: "Crepe Chiffon Scarf",
     price: 220,
-    items: [
-      { color: "Sahara", image: "1789653340773.jpg", soldOut: false },
-      { color: "Taupe", image: "1789653276516.jpg", soldOut: false },
-      { color: "Light Beige", image: "1789666550479.jpg", soldOut: false },
-      { color: "Beige", image: "1789666385502.jpg", soldOut: false }
+    colors: [
+      {
+        color: "Sahara",
+        image: "1789653340773.jpg",
+        soldOut: false
+      },
+      {
+        color: "Taupe",
+        image: "1789653276516.jpg",
+        soldOut: false
+      },
+      {
+        color: "Light Beige",
+        image: "1789666550479.jpg",
+        soldOut: false
+      },
+      {
+        color: "Beige",
+        image: "1789666385502.jpg",
+        soldOut: false
+      }
     ]
   },
 
@@ -62,11 +100,27 @@ const productGroups = [
     id: "chiffon2",
     name: "Crepe Chiffon Scarf",
     price: 220,
-    items: [
-      { color: "White", image: "1789612810611.jpg", soldOut: false },
-      { color: "Off White", image: "1789656243041.jpg", soldOut: false },
-      { color: "Ice Grey", image: "1789656096412.jpg", soldOut: false },
-      { color: "Cream", image: "cream.jpg", soldOut: false }
+    colors: [
+      {
+        color: "White",
+        image: "1789612810611.jpg",
+        soldOut: false
+      },
+      {
+        color: "Off White",
+        image: "1789656243041.jpg",
+        soldOut: false
+      },
+      {
+        color: "Ice Grey",
+        image: "1789656096412.jpg",
+        soldOut: false
+      },
+      {
+        color: "Cream",
+        image: "cream.jpg",
+        soldOut: false
+      }
     ]
   },
 
@@ -74,11 +128,27 @@ const productGroups = [
     id: "chiffon3",
     name: "Crepe Chiffon Scarf",
     price: 220,
-    items: [
-      { color: "Mint Green", image: "1789656901442.jpg", soldOut: false },
-      { color: "Pistachio", image: "1789657273597.jpg", soldOut: false },
-      { color: "Light Olive Green", image: "Light.olive.green.jpg", soldOut: false },
-      { color: "Olive Green", image: "1789658305384.jpg", soldOut: false }
+    colors: [
+      {
+        color: "Mint Green",
+        image: "1789656901442.jpg",
+        soldOut: false
+      },
+      {
+        color: "Pistachio",
+        image: "1789657273597.jpg",
+        soldOut: false
+      },
+      {
+        color: "Light Olive Green",
+        image: "Light.olive.green.jpg",
+        soldOut: false
+      },
+      {
+        color: "Olive Green",
+        image: "1789658305384.jpg",
+        soldOut: false
+      }
     ]
   },
 
@@ -86,13 +156,37 @@ const productGroups = [
     id: "chiffon4",
     name: "Crepe Chiffon Scarf",
     price: 220,
-    items: [
-      { color: "Baby Blue", image: "1789661119267.jpg", soldOut: false },
-      { color: "Dusty Blue", image: "1789653467598.jpg", soldOut: false },
-      { color: "Ocean Blue", image: "1789653590293.jpg", soldOut: false },
-      { color: "Petroleum", image: "1789609239720.jpg", soldOut: false },
-      { color: "Navy", image: "1789661581244.jpg", soldOut: false },
-      { color: "Midnight", image: "1789654089295.jpg", soldOut: false }
+    colors: [
+      {
+        color: "Baby Blue",
+        image: "1789661119267.jpg",
+        soldOut: false
+      },
+      {
+        color: "Dusty Blue",
+        image: "1789653467598.jpg",
+        soldOut: false
+      },
+      {
+        color: "Ocean Blue",
+        image: "1789653590293.jpg",
+        soldOut: false
+      },
+      {
+        color: "Petroleum",
+        image: "1789609239720.jpg",
+        soldOut: false
+      },
+      {
+        color: "Navy",
+        image: "1789661581244.jpg",
+        soldOut: false
+      },
+      {
+        color: "Midnight",
+        image: "1789654089295.jpg",
+        soldOut: false
+      }
     ]
   },
 
@@ -100,13 +194,37 @@ const productGroups = [
     id: "chiffon5",
     name: "Crepe Chiffon Scarf",
     price: 220,
-    items: [
-      { color: "Peach", image: "1789662261446.jpg", soldOut: false },
-      { color: "Coral", image: "1789662069402.jpg", soldOut: false },
-      { color: "Orange", image: "1789609303020.jpg", soldOut: false },
-      { color: "Red", image: "1789609437413.jpg", soldOut: false },
-      { color: "Caramel", image: "1789670850781.jpg", soldOut: false },
-      { color: "Maroon", image: "1789661509678.jpg", soldOut: false }
+    colors: [
+      {
+        color: "Peach",
+        image: "1789662261446.jpg",
+        soldOut: false
+      },
+      {
+        color: "Coral",
+        image: "1789662069402.jpg",
+        soldOut: false
+      },
+      {
+        color: "Orange",
+        image: "1789609303020.jpg",
+        soldOut: false
+      },
+      {
+        color: "Red",
+        image: "1789609437413.jpg",
+        soldOut: false
+      },
+      {
+        color: "Caramel",
+        image: "1789670850781.jpg",
+        soldOut: false
+      },
+      {
+        color: "Maroon",
+        image: "1789661509678.jpg",
+        soldOut: false
+      }
     ]
   },
 
@@ -114,11 +232,27 @@ const productGroups = [
     id: "chiffon6",
     name: "Crepe Chiffon Scarf",
     price: 220,
-    items: [
-      { color: "Dusty Rose", image: "1789659142918.jpg", soldOut: false },
-      { color: "Baby Pink", image: "1789672026217.jpg", soldOut: false },
-      { color: "Rosewood", image: "1789659236519 (1).jpg", soldOut: false },
-      { color: "Pink", image: "1789659236519.jpg", soldOut: false }
+    colors: [
+      {
+        color: "Dusty Rose",
+        image: "1789659142918.jpg",
+        soldOut: false
+      },
+      {
+        color: "Baby Pink",
+        image: "1789672026217.jpg",
+        soldOut: false
+      },
+      {
+        color: "Rosewood",
+        image: "1789659236519 (1).jpg",
+        soldOut: false
+      },
+      {
+        color: "Pink",
+        image: "1789659236519.jpg",
+        soldOut: false
+      }
     ]
   },
 
@@ -126,9 +260,17 @@ const productGroups = [
     id: "chiffon7",
     name: "Crepe Chiffon Scarf",
     price: 220,
-    items: [
-      { color: "Dusty Grey", image: "1789655859702.jpg", soldOut: false },
-      { color: "Grey", image: "1789655856246.jpg", soldOut: false }
+    colors: [
+      {
+        color: "Dusty Grey",
+        image: "1789655859702.jpg",
+        soldOut: false
+      },
+      {
+        color: "Grey",
+        image: "1789655856246.jpg",
+        soldOut: false
+      }
     ]
   },
 
@@ -136,22 +278,40 @@ const productGroups = [
     id: "chiffon8",
     name: "Crepe Chiffon Scarf",
     price: 220,
-    items: [
-      { color: "Dark Mauve", image: "1789664028182.jpg", soldOut: false },
-      { color: "Mulberry", image: "1789672320095.jpg", soldOut: false },
-      { color: "Lavender", image: "1789612119826.jpg", soldOut: false },
-      { color: "Ice Mauve", image: "1789658699638.jpg", soldOut: false },
-      { color: "Aubergine", image: "Aubergine.jpg", soldOut: false }
+    colors: [
+      {
+        color: "Dark Mauve",
+        image: "1789664028182.jpg",
+        soldOut: false
+      },
+      {
+        color: "Mulberry",
+        image: "1789672320095.jpg",
+        soldOut: false
+      },
+      {
+        color: "Lavender",
+        image: "1789612119826.jpg",
+        soldOut: false
+      },
+      {
+        color: "Ice Mauve",
+        image: "1789658699638.jpg",
+        soldOut: false
+      },
+      {
+        color: "Aubergine",
+        image: "Aubergine.jpg",
+        soldOut: false
+      }
     ]
   },
 
-
-  /* WRIST CUFFS */
   {
-    id: "wristCuffs",
+    id: "cuffs",
     name: "Wrist Cuffs",
     price: 100,
-    items: [
+    colors: [
       {
         color: "Sparkles",
         image: "1789701688187.jpg",
@@ -173,284 +333,760 @@ const productGroups = [
 ];
 
 
-let cart = JSON.parse(localStorage.getItem("israaCart")) || [];
-let wishlist = JSON.parse(localStorage.getItem("israaWishlist")) || [];
+let cart =
+  JSON.parse(localStorage.getItem("israaCart")) || [];
 
-
-// Update old chiffon items in existing cart to the new price
-cart = cart.map(item => {
-  if (item.name === "Crepe Chiffon Scarf") {
-    return { ...item, price: 220 };
-  }
-  return item;
-});
-
-localStorage.setItem("israaCart", JSON.stringify(cart));
-
+let wishlist =
+  JSON.parse(localStorage.getItem("israaWishlist")) || [];
 
 let currentGroup = null;
 let currentIndex = 0;
 
 
-/* =========================
-   PRODUCT CATALOG
-========================= */
+/* PRODUCT CATALOG */
 
 function renderProductGroups() {
 
-  const catalog = document.getElementById("productCatalog");
+  const catalog =
+    document.getElementById("productCatalog");
 
   if (!catalog) return;
 
   catalog.innerHTML = "";
 
 
-  // Crystal
-  const crystalTitle = document.createElement("h2");
-  crystalTitle.className = "section-title";
-  crystalTitle.textContent = "Crystal Comfort Scarf";
+  const crystalTitle =
+    document.createElement("h2");
+
+  crystalTitle.className =
+    "section-title";
+
+  crystalTitle.textContent =
+    "Crystal Comfort Scarf";
+
   catalog.appendChild(crystalTitle);
 
-  const crystalGroup = productGroups.find(group => group.id === "crystal");
+  createProductWindow(
+    catalog,
+    productGroups[0]
+  );
 
-  if (crystalGroup) {
-    createProductWindow(catalog, crystalGroup);
-  }
 
+  const chiffonTitle =
+    document.createElement("h2");
 
-  // Chiffon
-  const chiffonTitle = document.createElement("h2");
-  chiffonTitle.className = "section-title";
-  chiffonTitle.textContent = "Crepe Chiffon Scarf";
+  chiffonTitle.className =
+    "section-title";
+
+  chiffonTitle.textContent =
+    "Crepe Chiffon Scarf";
+
   catalog.appendChild(chiffonTitle);
 
+
   productGroups
-    .filter(group => group.id.startsWith("chiffon"))
+    .slice(1, 9)
     .forEach(group => {
-      createProductWindow(catalog, group);
+
+      createProductWindow(
+        catalog,
+        group
+      );
+
     });
 
 
-  // Wrist Cuffs
-  const cuffsTitle = document.createElement("h2");
-  cuffsTitle.className = "section-title";
-  cuffsTitle.textContent = "Wrist Cuffs";
+  const cuffsTitle =
+    document.createElement("h2");
+
+  cuffsTitle.className =
+    "section-title";
+
+  cuffsTitle.textContent =
+    "Wrist Cuffs";
+
   catalog.appendChild(cuffsTitle);
 
-  const cuffsGroup = productGroups.find(
-    group => group.id === "wristCuffs"
+
+  createProductWindow(
+    catalog,
+    productGroups[9]
   );
 
-  if (cuffsGroup) {
-    createProductWindow(catalog, cuffsGroup);
-  }
 }
 
 
-/* =========================
-   PRODUCT WINDOW
-========================= */
+function createProductWindow(
+  catalog,
+  group
+) {
 
-function createProductWindow(container, group) {
+  const groupSection =
+    document.createElement("div");
 
-  const window = document.createElement("div");
-  window.className = "product-group";
-
-  const groupWindow = document.createElement("div");
-  groupWindow.className = "group-window";
-
-  const track = document.createElement("div");
-  track.className = "group-track";
+  groupSection.className =
+    "product-group";
 
 
-  group.items.forEach((item, index) => {
-
-    const card = document.createElement("div");
-    card.className = "catalog-card";
-
-    const key = `${group.id}-${index}`;
-
-    const isWishlisted = wishlist.includes(key);
+  groupSection.innerHTML = `
+    <div class="group-window">
+      <div class="group-track"></div>
+    </div>
+  `;
 
 
-    if (item.soldOut) {
+  catalog.appendChild(groupSection);
 
-      const soldOut = document.createElement("div");
-      soldOut.className = "sold-out";
-      soldOut.textContent = "SOLD OUT";
 
-      card.appendChild(soldOut);
+  const track =
+    groupSection.querySelector(
+      ".group-track"
+    );
+
+
+  group.colors.forEach(
+    (product, index) => {
+
+      const card =
+        document.createElement("div");
+
+      card.className =
+        "catalog-card";
+
+
+      const key =
+        getProductKey(group.id, index);
+
+      const isWishlisted =
+        wishlist.includes(key);
+
+
+      card.innerHTML = `
+
+        ${
+          product.soldOut
+            ? `<div class="sold-out">SOLD OUT</div>`
+            : ""
+        }
+
+        <button
+          class="card-heart ${
+            isWishlisted ? "active" : ""
+          }"
+          onclick="toggleWishlist('${group.id}', ${index})"
+          aria-label="Wishlist"
+        >
+          ${isWishlisted ? "♥" : "♡"}
+        </button>
+
+        <img
+          src="${product.image}"
+          alt="${product.color}"
+        >
+
+        <div class="catalog-info">
+
+          <span>${product.color}</span>
+
+          <span>${group.price} EGP</span>
+
+          <button
+            class="${
+              product.soldOut
+                ? "sold-out-button"
+                : ""
+            }"
+            ${
+              product.soldOut
+                ? "disabled"
+                : ""
+            }
+            onclick="openProduct('${group.id}', ${index})"
+          >
+            ${
+              product.soldOut
+                ? "Sold Out"
+                : "View"
+            }
+          </button>
+
+        </div>
+      `;
+
+
+      track.appendChild(card);
+
     }
+  );
 
-
-    const heart = document.createElement("button");
-    heart.className = "card-heart";
-    heart.innerHTML = isWishlisted ? "♥" : "♡";
-
-    heart.onclick = function(event) {
-      event.stopPropagation();
-      toggleWishlist(group, index);
-    };
-
-    card.appendChild(heart);
-
-
-    const image = document.createElement("img");
-    image.src = item.image;
-    image.alt = item.color;
-
-    card.appendChild(image);
-
-
-    const color = document.createElement("div");
-    color.className = "catalog-color";
-    color.textContent = item.color;
-
-    card.appendChild(color);
-
-
-    const price = document.createElement("div");
-    price.className = "catalog-price";
-    price.textContent = `${group.price} EGP`;
-
-    card.appendChild(price);
-
-
-    const button = document.createElement("button");
-
-    if (item.soldOut) {
-
-      button.className = "sold-out-button";
-      button.textContent = "SOLD OUT";
-
-    } else {
-
-      button.className = "catalog-button";
-      button.textContent = "View";
-
-      button.onclick = function() {
-        openProduct(group, index);
-      };
-    }
-
-    card.appendChild(button);
-
-    track.appendChild(card);
-  });
-
-
-  groupWindow.appendChild(track);
-  window.appendChild(groupWindow);
-  container.appendChild(window);
 }
 
 
-/* =========================
-   PRODUCT MODAL
-========================= */
+/* PRODUCT MODAL */
 
-function openProduct(group, index) {
+function openProduct(
+  groupId,
+  index
+) {
+
+  const group =
+    productGroups.find(
+      item => item.id === groupId
+    );
+
+  if (!group) return;
 
   currentGroup = group;
   currentIndex = index;
 
-  const item = group.items[index];
+  updateProductModal();
 
-  document.getElementById("modalProductImage").src = item.image;
+  document
+    .getElementById("productOverlay")
+    .classList.add("active");
 
-  document.getElementById("modalProductName").textContent = group.name;
-
-  document.getElementById("modalProductColor").textContent =
-    `Color: ${item.color}`;
-
-  document.getElementById("modalProductPrice").textContent =
-    `${group.price} EGP`;
+}
 
 
-  const wishlistButton =
-    document.getElementById("modalWishlistButton");
+function updateProductModal() {
 
-  wishlistButton.textContent =
-    wishlist.includes(`${group.id}-${index}`) ? "♥" : "♡";
+  if (!currentGroup) return;
+
+  const product =
+    currentGroup.colors[currentIndex];
 
 
-  wishlistButton.onclick = function() {
-    toggleWishlist(group, index);
-  };
+  document.getElementById(
+    "modalImage"
+  ).src = product.image;
+
+
+  document.getElementById(
+    "modalImage"
+  ).alt = product.color;
+
+
+  document.getElementById(
+    "modalName"
+  ).textContent =
+    currentGroup.name;
+
+
+  document.getElementById(
+    "modalColor"
+  ).textContent =
+    product.color;
+
+
+  document.getElementById(
+    "modalPrice"
+  ).textContent =
+    currentGroup.price;
 
 
   const addButton =
-    document.getElementById("modalAddButton");
+    document.getElementById(
+      "modalAddButton"
+    );
 
-  if (item.soldOut) {
 
-    addButton.textContent = "SOLD OUT";
+  if (product.soldOut) {
+
     addButton.disabled = true;
+
+    addButton.textContent =
+      "SOLD OUT";
 
   } else {
 
-    addButton.textContent = "Add to Cart";
     addButton.disabled = false;
 
-    addButton.onclick = function() {
-      addToCart(group, index);
-    };
+    addButton.textContent =
+      "Add to Cart";
+
   }
 
 
-  document.getElementById("productModal")
-    .classList.add("active");
+  updateModalWishlistButton();
+
+}
+
+
+function updateModalWishlistButton() {
+
+  if (!currentGroup) return;
+
+  const key =
+    getProductKey(
+      currentGroup.id,
+      currentIndex
+    );
+
+  const button =
+    document.getElementById(
+      "modalWishlistButton"
+    );
+
+  if (!button) return;
+
+
+  if (wishlist.includes(key)) {
+
+    button.classList.add("active");
+
+    button.textContent =
+      "♥ Added to Wishlist";
+
+  } else {
+
+    button.classList.remove("active");
+
+    button.textContent =
+      "♡ Add to Wishlist";
+
+  }
+
+}
+
+
+function nextProduct() {
+
+  if (!currentGroup) return;
+
+  currentIndex++;
+
+  if (
+    currentIndex >=
+    currentGroup.colors.length
+  ) {
+    currentIndex = 0;
+  }
+
+  updateProductModal();
+
+}
+
+
+function previousProduct() {
+
+  if (!currentGroup) return;
+
+  currentIndex--;
+
+  if (currentIndex < 0) {
+
+    currentIndex =
+      currentGroup.colors.length - 1;
+
+  }
+
+  updateProductModal();
+
 }
 
 
 function closeProduct() {
 
-  document.getElementById("productModal")
+  document
+    .getElementById("productOverlay")
     .classList.remove("active");
+
 }
 
 
-/* =========================
-   CART
-========================= */
+/* SWIPE */
 
-function addToCart(group, index) {
+let touchStartX = 0;
 
-  const item = group.items[index];
+document.addEventListener(
+  "touchstart",
+  event => {
 
-  if (item.soldOut) return;
+    if (!event.touches.length) return;
+
+    touchStartX =
+      event.touches[0].clientX;
+
+  }
+);
 
 
-  cart.push({
-    key: `${group.id}-${index}`,
-    name: group.name,
-    color: item.color,
-    image: item.image,
-    price: group.price
+document.addEventListener(
+  "touchend",
+  event => {
+
+    if (!touchStartX) return;
+
+    const overlay =
+      document.getElementById(
+        "productOverlay"
+      );
+
+
+    if (
+      !overlay.classList.contains(
+        "active"
+      )
+    ) {
+
+      touchStartX = 0;
+      return;
+
+    }
+
+
+    const touchEndX =
+      event.changedTouches[0].clientX;
+
+
+    const difference =
+      touchStartX - touchEndX;
+
+
+    if (Math.abs(difference) > 50) {
+
+      if (difference > 0) {
+
+        nextProduct();
+
+      } else {
+
+        previousProduct();
+
+      }
+
+    }
+
+
+    touchStartX = 0;
+
+  }
+);
+
+
+/* PRODUCT KEY */
+
+function getProductKey(
+  groupId,
+  index
+) {
+
+  return groupId + "-" + index;
+
+}
+
+
+/* WISHLIST */
+
+function saveWishlist() {
+
+  localStorage.setItem(
+    "israaWishlist",
+    JSON.stringify(wishlist)
+  );
+
+  updateWishlistCount();
+
+}
+
+
+function updateWishlistCount() {
+
+  const count =
+    document.getElementById(
+      "wishlistCount"
+    );
+
+  if (!count) return;
+
+  count.textContent =
+    wishlist.length;
+
+}
+
+
+function toggleWishlist(
+  groupId,
+  index
+) {
+
+  const key =
+    getProductKey(
+      groupId,
+      index
+    );
+
+
+  const position =
+    wishlist.indexOf(key);
+
+
+  if (position === -1) {
+
+    wishlist.push(key);
+
+  } else {
+
+    wishlist.splice(position, 1);
+
+  }
+
+
+  saveWishlist();
+
+  renderProductGroups();
+
+  updateModalWishlistButton();
+
+}
+
+
+function toggleCurrentWishlist() {
+
+  if (!currentGroup) return;
+
+  toggleWishlist(
+    currentGroup.id,
+    currentIndex
+  );
+
+}
+
+
+function openWishlist() {
+
+  renderWishlist();
+
+  document
+    .getElementById("wishlistOverlay")
+    .classList.add("active");
+
+}
+
+
+function closeWishlist() {
+
+  document
+    .getElementById("wishlistOverlay")
+    .classList.remove("active");
+
+}
+
+
+function renderWishlist() {
+
+  const container =
+    document.getElementById(
+      "wishlistItems"
+    );
+
+  if (!container) return;
+
+
+  container.innerHTML = "";
+
+
+  if (wishlist.length === 0) {
+
+    container.innerHTML =
+      "<p>Your wishlist is empty ♡</p>";
+
+    return;
+
+  }
+
+
+  wishlist.forEach(key => {
+
+    const parts =
+      key.split("-");
+
+    const groupId =
+      parts[0];
+
+    const index =
+      Number(parts[1]);
+
+
+    const group =
+      productGroups.find(
+        item => item.id === groupId
+      );
+
+    if (!group) return;
+
+
+    const product =
+      group.colors[index];
+
+    if (!product) return;
+
+
+    const item =
+      document.createElement("div");
+
+    item.className =
+      "wishlist-item";
+
+
+    item.innerHTML = `
+
+      <img
+        src="${product.image}"
+        alt="${product.color}"
+      >
+
+      <div class="wishlist-item-info">
+
+        <strong>${product.color}</strong>
+
+        <p>${group.price} EGP</p>
+
+        ${
+          product.soldOut
+            ? `<p class="sold-out-text">SOLD OUT</p>`
+            : ""
+        }
+
+      </div>
+
+      <button
+        class="wishlist-remove"
+        onclick="removeFromWishlist('${key}')"
+      >
+        Remove
+      </button>
+
+    `;
+
+
+    container.appendChild(item);
+
   });
 
+}
+
+
+function removeFromWishlist(key) {
+
+  wishlist =
+    wishlist.filter(
+      item => item !== key
+    );
+
+  saveWishlist();
+
+  renderWishlist();
+
+  renderProductGroups();
+
+  updateModalWishlistButton();
+
+}
+
+
+/* CART */
+
+function saveCart() {
 
   localStorage.setItem(
     "israaCart",
     JSON.stringify(cart)
   );
 
-
   updateCartCount();
-  showCartToast(item.color);
 
-  closeProduct();
 }
 
 
 function updateCartCount() {
 
   const count =
-    document.getElementById("cartCount");
+    document.getElementById(
+      "cartCount"
+    );
 
-  if (count) {
-    count.textContent = cart.length;
-  }
+  if (!count) return;
+
+  count.textContent =
+    cart.length;
+
+}
+
+
+function addCurrentProduct() {
+
+  if (!currentGroup) return;
+
+  const product =
+    currentGroup.colors[currentIndex];
+
+
+  if (product.soldOut) return;
+
+
+  cart.push({
+
+    name: currentGroup.name,
+
+    color: product.color,
+
+    price: currentGroup.price,
+
+    image: product.image
+
+  });
+
+
+  saveCart();
+
+  showCartToast(
+    product.color
+  );
+
+  closeProduct();
+
+}
+
+
+function showCartToast(color) {
+
+  const toast =
+    document.getElementById(
+      "cartToast"
+    );
+
+  const message =
+    document.getElementById(
+      "toastMessage"
+    );
+
+  if (!toast || !message) return;
+
+
+  message.textContent =
+    color
+      ? `${color} added to your cart`
+      : "Added to your cart";
+
+
+  toast.classList.add("show");
+
+
+  clearTimeout(
+    window.cartToastTimer
+  );
+
+
+  window.cartToastTimer =
+    setTimeout(() => {
+
+      toast.classList.remove(
+        "show"
+      );
+
+    }, 2500);
+
 }
 
 
@@ -458,22 +1094,80 @@ function openCart() {
 
   renderCart();
 
-  document.getElementById("cartModal")
+  document
+    .getElementById("cartOverlay")
     .classList.add("active");
+
 }
 
 
 function closeCart() {
 
-  document.getElementById("cartModal")
+  document
+    .getElementById("cartOverlay")
     .classList.remove("active");
+
+}
+
+
+function getCartSubtotal() {
+
+  return cart.reduce(
+    (sum, item) =>
+      sum + Number(item.price),
+    0
+  );
+
+}
+
+
+function getSelectedShipping() {
+
+  const governorate =
+    document.getElementById(
+      "governorate"
+    )?.value;
+
+
+  if (!governorate) return 0;
+
+  return shippingRates[
+    governorate
+  ] || 0;
+
 }
 
 
 function renderCart() {
 
   const container =
-    document.getElementById("cartItems");
+    document.getElementById(
+      "cartItems"
+    );
+
+  const subtotalElement =
+    document.getElementById(
+      "cartSubtotal"
+    );
+
+  const shippingElement =
+    document.getElementById(
+      "cartShipping"
+    );
+
+  const totalElement =
+    document.getElementById(
+      "cartTotal"
+    );
+
+
+  if (
+    !container ||
+    !subtotalElement ||
+    !shippingElement ||
+    !totalElement
+  ) return;
+
 
   container.innerHTML = "";
 
@@ -483,332 +1177,252 @@ function renderCart() {
     container.innerHTML =
       "<p>Your cart is empty.</p>";
 
-    document.getElementById("cartSubtotal").textContent =
-      "0 EGP";
-
-    document.getElementById("cartShipping").textContent =
-      "0 EGP";
-
-    document.getElementById("cartTotal").textContent =
-      "0 EGP";
-
-    return;
   }
 
 
-  cart.forEach((item, index) => {
+  cart.forEach(
+    (item, index) => {
 
-    const row = document.createElement("div");
-    row.className = "cart-item";
+      const row =
+        document.createElement("div");
 
-
-    const image = document.createElement("img");
-    image.src = item.image;
-
-    row.appendChild(image);
+      row.className =
+        "cart-item";
 
 
-    const info = document.createElement("div");
-    info.className = "cart-item-info";
+      row.innerHTML = `
 
-    info.innerHTML = `
-      <strong>${item.name}</strong>
-      <span>${item.color}</span>
-      <span>${item.price} EGP</span>
-    `;
+        <img
+          src="${item.image}"
+          alt="${item.color}"
+        >
 
-    row.appendChild(info);
+        <div>
 
+          <strong>${item.name}</strong>
 
-    const remove = document.createElement("button");
-    remove.textContent = "×";
+          <p>${item.color}</p>
 
-    remove.onclick = function() {
-      cart.splice(index, 1);
+          <p>${item.price} EGP</p>
 
-      localStorage.setItem(
-        "israaCart",
-        JSON.stringify(cart)
-      );
+          <button
+            onclick="removeFromCart(${index})"
+          >
+            Remove
+          </button>
 
-      updateCartCount();
-      renderCart();
-    };
+        </div>
+
+      `;
 
 
-    row.appendChild(remove);
+      container.appendChild(row);
 
-    container.appendChild(row);
-  });
-
-
-  const subtotal =
-    cart.reduce(
-      (sum, item) => sum + Number(item.price),
-      0
-    );
-
-
-  document.getElementById("cartSubtotal").textContent =
-    `${subtotal} EGP`;
-
-  document.getElementById("cartShipping").textContent =
-    "Select governorate at checkout";
-
-  document.getElementById("cartTotal").textContent =
-    `${subtotal} EGP`;
-}
-
-
-/* =========================
-   WISHLIST
-========================= */
-
-function toggleWishlist(group, index) {
-
-  const key = `${group.id}-${index}`;
-
-  if (wishlist.includes(key)) {
-
-    wishlist = wishlist.filter(
-      item => item !== key
-    );
-
-  } else {
-
-    wishlist.push(key);
-  }
-
-
-  localStorage.setItem(
-    "israaWishlist",
-    JSON.stringify(wishlist)
+    }
   );
 
 
-  updateWishlistCount();
-  renderProductGroups();
+  const subtotal =
+    getCartSubtotal();
 
 
-  if (
-    currentGroup &&
-    currentGroup.id === group.id &&
-    currentIndex === index
-  ) {
-    document.getElementById("modalWishlistButton").textContent =
-      wishlist.includes(key) ? "♥" : "♡";
-  }
+  /*
+    Shipping is calculated
+    after the customer selects
+    the governorate at checkout.
+  */
+
+  const shipping =
+    getSelectedShipping();
 
 
-  if (
-    document.getElementById("wishlistModal")
-      .classList.contains("active")
-  ) {
-    renderWishlist();
-  }
+  subtotalElement.textContent =
+    subtotal;
+
+
+  shippingElement.textContent =
+    shipping;
+
+
+  totalElement.textContent =
+    subtotal + shipping;
+
 }
 
 
-function updateWishlistCount() {
+/* REMOVE CART ITEM */
 
-  const count =
-    document.getElementById("wishlistCount");
+function removeFromCart(index) {
 
-  if (count) {
-    count.textContent = wishlist.length;
-  }
+  cart.splice(index, 1);
+
+  saveCart();
+
+  renderCart();
+
 }
 
 
-function openWishlist() {
-
-  renderWishlist();
-
-  document.getElementById("wishlistModal")
-    .classList.add("active");
-}
-
-
-function closeWishlist() {
-
-  document.getElementById("wishlistModal")
-    .classList.remove("active");
-}
-
-
-function renderWishlist() {
-
-  const container =
-    document.getElementById("wishlistItems");
-
-  container.innerHTML = "";
-
-
-  let found = false;
-
-
-  productGroups.forEach(group => {
-
-    group.items.forEach((item, index) => {
-
-      const key = `${group.id}-${index}`;
-
-      if (!wishlist.includes(key)) return;
-
-      found = true;
-
-
-      const row = document.createElement("div");
-      row.className = "wishlist-item";
-
-
-      const image = document.createElement("img");
-      image.src = item.image;
-
-      row.appendChild(image);
-
-
-      const info = document.createElement("div");
-
-      info.innerHTML = `
-        <strong>${group.name}</strong>
-        <span>${item.color}</span>
-        <span>${group.price} EGP</span>
-      `;
-
-      row.appendChild(info);
-
-
-      const view = document.createElement("button");
-      view.textContent = "View";
-
-      view.onclick = function() {
-        closeWishlist();
-        openProduct(group, index);
-      };
-
-      row.appendChild(view);
-
-      container.appendChild(row);
-    });
-  });
-
-
-  if (!found) {
-    container.innerHTML =
-      "<p>Your wishlist is empty.</p>";
-  }
-}
-
-
-/* =========================
-   CHECKOUT
-========================= */
+/* CHECKOUT */
 
 function openCheckout() {
 
   if (cart.length === 0) {
+
+    alert(
+      "Your cart is empty"
+    );
+
     return;
+
   }
 
-  updateCheckoutTotal();
 
-  document.getElementById("checkoutModal")
+  closeCart();
+
+
+  const governorate =
+    document.getElementById(
+      "governorate"
+    );
+
+
+  if (governorate) {
+
+    governorate.value = "";
+
+  }
+
+
+  updateCheckoutShipping();
+
+
+  document
+    .getElementById(
+      "checkoutOverlay"
+    )
     .classList.add("active");
+
 }
 
 
 function closeCheckout() {
 
-  document.getElementById("checkoutModal")
+  document
+    .getElementById(
+      "checkoutOverlay"
+    )
     .classList.remove("active");
+
 }
 
 
-function updateCheckoutTotal() {
+function updateCheckoutShipping() {
 
   const subtotal =
-    cart.reduce(
-      (sum, item) => sum + Number(item.price),
-      0
-    );
-
-
-  const governorate =
-    document.getElementById(
-      "checkoutGovernorate"
-    ).value;
+    getCartSubtotal();
 
 
   const shipping =
-    shippingRates[governorate] || 0;
+    getSelectedShipping();
 
 
   const total =
     subtotal + shipping;
 
 
-  document.getElementById(
-    "checkoutSubtotal"
-  ).textContent = `${subtotal} EGP`;
+  const subtotalElement =
+    document.getElementById(
+      "checkoutSubtotal"
+    );
 
+  const shippingElement =
+    document.getElementById(
+      "checkoutShipping"
+    );
 
-  document.getElementById(
-    "checkoutShipping"
-  ).textContent =
-    governorate
-      ? `${shipping} EGP`
-      : "Select governorate";
-
-
-  document.getElementById(
-    "checkoutTotal"
-  ).textContent =
-    `${total} EGP`;
-}
-
-
-/* =========================
-   WHATSAPP ORDER
-========================= */
-
-function placeOrder() {
-
-  const name =
-    document.getElementById("checkoutName").value.trim();
-
-  const phone =
-    document.getElementById("checkoutPhone").value.trim();
-
-  const governorate =
-    document.getElementById("checkoutGovernorate").value;
-
-  const address =
-    document.getElementById("checkoutAddress").value.trim();
-
-
-  if (
-    !name ||
-    !phone ||
-    !governorate ||
-    !address
-  ) {
-
-    alert("Please complete all required fields.");
-
-    return;
-  }
-
-
-  const subtotal =
-    cart.reduce(
-      (sum, item) => sum + Number(item.price),
-      0
+  const totalElement =
+    document.getElementById(
+      "checkoutTotal"
     );
 
 
+  if (subtotalElement) {
+
+    subtotalElement.textContent =
+      subtotal;
+
+  }
+
+
+  if (shippingElement) {
+
+    shippingElement.textContent =
+      shipping;
+
+  }
+
+
+  if (totalElement) {
+
+    totalElement.textContent =
+      total;
+
+  }
+
+}
+
+
+/* PLACE ORDER */
+
+function placeOrder(event) {
+
+  event.preventDefault();
+
+
+  if (cart.length === 0) {
+
+    alert(
+      "Your cart is empty"
+    );
+
+    return;
+
+  }
+
+
+  const name =
+    document.getElementById(
+      "customerName"
+    ).value.trim();
+
+
+  const phone =
+    document.getElementById(
+      "customerPhone"
+    ).value.trim();
+
+
+  const governorate =
+    document.getElementById(
+      "governorate"
+    ).value;
+
+
+  const address =
+    document.getElementById(
+      "customerAddress"
+    ).value.trim();
+
+
   const shipping =
-    shippingRates[governorate];
+    shippingRates[
+      governorate
+    ] || 0;
+
+
+  const subtotal =
+    getCartSubtotal();
 
 
   const total =
@@ -816,287 +1430,459 @@ function placeOrder() {
 
 
   let message =
-    `Israa Boutique Order%0A%0A`;
+    "New Order - Israa Boutique\n\n";
+
 
   message +=
-    `Name: ${name}%0A`;
+    "Name: " +
+    name +
+    "\n";
+
 
   message +=
-    `Phone: ${phone}%0A`;
+    "Phone: " +
+    phone +
+    "\n";
+
 
   message +=
-    `Governorate: ${governorate}%0A`;
+    "Governorate: " +
+    governorate +
+    "\n";
+
 
   message +=
-    `Address: ${address}%0A%0A`;
+    "Address: " +
+    address +
+    "\n\n";
 
-
-  message += `Order:%0A`;
-
-
-  cart.forEach(item => {
-
-    message +=
-      `- ${item.name} - ${item.color} - ${item.price} EGP%0A`;
-  });
-
-
-  message += `%0ASubtotal: ${subtotal} EGP%0A`;
 
   message +=
-    `Shipping Fee: ${shipping} EGP%0A`;
+    "Products:\n";
+
+
+  cart.forEach(
+    (item, index) => {
+
+      message +=
+        `${index + 1}. ` +
+        `${item.name} - ` +
+        `${item.color} - ` +
+        `${item.price} EGP\n`;
+
+    }
+  );
+
 
   message +=
-    `Total: ${total} EGP`;
+    "\nSubtotal: " +
+    subtotal +
+    " EGP";
+
+
+  message +=
+    "\nShipping Fee: " +
+    shipping +
+    " EGP";
+
+
+  message +=
+    "\nTotal: " +
+    total +
+    " EGP";
+
+
+  message +=
+    "\nPayment Method: Vodafone Cash";
+
+
+  message +=
+    "\nVodafone Cash Number: 01021755186";
+
+
+  message +=
+    "\n\nPlease transfer the full amount before placing your order to secure your order.";
+
+
+  const url =
+    "https://wa.me/" +
+    whatsapp +
+    "?text=" +
+    encodeURIComponent(message);
 
 
   window.open(
-    `https://wa.me/${whatsapp}?text=${message}`,
+    url,
     "_blank"
   );
+
+
+  cart = [];
+
+  saveCart();
+
+  closeCheckout();
+
 }
 
 
-/* =========================
-   QUIZ
-========================= */
+/* QUIZ */
 
-function findMyLook() {
+function getRecommendation() {
 
-  const q1 =
+  const undertone =
     document.querySelector(
-      'input[name="q1"]:checked'
-    )?.value;
-
-  const q2 =
-    document.querySelector(
-      'input[name="q2"]:checked'
-    )?.value;
-
-  const q3 =
-    document.querySelector(
-      'input[name="q3"]:checked'
+      'input[name="undertone"]:checked'
     )?.value;
 
 
-  if (!q1 || !q2 || !q3) {
+  const brightness =
+    document.querySelector(
+      'input[name="brightness"]:checked'
+    )?.value;
 
-    document.getElementById("quizResult").textContent =
-      "Please answer all three questions.";
+
+  const palette =
+    document.querySelector(
+      'input[name="palette"]:checked'
+    )?.value;
+
+
+  const result =
+    document.getElementById(
+      "quizResult"
+    );
+
+
+  if (
+    !undertone ||
+    !brightness ||
+    !palette
+  ) {
+
+    result.innerHTML =
+      "<p>Please answer all three questions ♡</p>";
+
+    result.classList.add(
+      "active"
+    );
 
     return;
+
   }
 
 
   const scores = {};
 
 
-  productGroups.forEach(group => {
+  function addScore(
+    color,
+    points
+  ) {
 
-    group.items.forEach(item => {
+    scores[color] =
+      (scores[color] || 0) +
+      points;
 
-      if (item.soldOut) return;
-
-      let score = 0;
-
-      const color =
-        item.color.toLowerCase();
-
-
-      if (
-        q1 === "neutral" &&
-        (
-          color.includes("beige") ||
-          color.includes("taupe") ||
-          color.includes("cream") ||
-          color.includes("grey") ||
-          color.includes("gray")
-        )
-      ) score += 2;
+  }
 
 
-      if (
-        q1 === "soft" &&
-        (
-          color.includes("lavender") ||
-          color.includes("pink") ||
-          color.includes("mint") ||
-          color.includes("baby")
-        )
-      ) score += 2;
+  /*
+    Undertone
+  */
+
+  if (undertone === "warm") {
+
+    [
+      "Café",
+      "Caramel",
+      "Sahara",
+      "Beige"
+    ].forEach(
+      color => addScore(color, 3)
+    );
+
+    [
+      "Maroon",
+      "Olive Green",
+      "Petroleum"
+    ].forEach(
+      color => addScore(color, 2)
+    );
+
+  }
 
 
-      if (
-        q1 === "dark" &&
-        (
-          color.includes("navy") ||
-          color.includes("midnight") ||
-          color.includes("maroon") ||
-          color.includes("aubergine") ||
-          color.includes("slate")
-        )
-      ) score += 2;
+  if (undertone === "cool") {
+
+    [
+      "Lavender",
+      "Baby Blue",
+      "Dusty Blue",
+      "Ice Mauve"
+    ].forEach(
+      color => addScore(color, 3)
+    );
+
+    [
+      "Navy",
+      "Midnight",
+      "Aubergine",
+      "Mulberry"
+    ].forEach(
+      color => addScore(color, 2)
+    );
+
+  }
 
 
-      if (
-        q1 === "colorful" &&
-        (
-          color.includes("green") ||
-          color.includes("blue") ||
-          color.includes("orange") ||
-          color.includes("coral") ||
-          color.includes("red")
-        )
-      ) score += 2;
+  if (undertone === "neutral") {
+
+    [
+      "Cream",
+      "Off White",
+      "Taupe",
+      "Dusty Rose"
+    ].forEach(
+      color => addScore(color, 3)
+    );
+
+    [
+      "Dark Mauve",
+      "Rosewood",
+      "Slate Gray",
+      "Grey"
+    ].forEach(
+      color => addScore(color, 2)
+    );
+
+  }
 
 
-      if (
-        q2 === "elegant" &&
-        (
-          color.includes("lavender") ||
-          color.includes("rose") ||
-          color.includes("mauve") ||
-          color.includes("slate")
-        )
-      ) score += 2;
+  /*
+    Light / Dark preference
+  */
+
+  if (brightness === "light") {
+
+    [
+      "Cream",
+      "Off White",
+      "Beige",
+      "Light Beige",
+      "Lavender",
+      "Baby Blue",
+      "Dusty Blue",
+      "Mint Green",
+      "Dusty Rose",
+      "Peach"
+    ].forEach(
+      color => addScore(color, 2)
+    );
+
+  }
 
 
-      if (
-        q2 === "soft" &&
-        (
-          color.includes("mint") ||
-          color.includes("pink") ||
-          color.includes("cream") ||
-          color.includes("baby")
-        )
-      ) score += 2;
+  if (brightness === "dark") {
+
+    [
+      "Navy",
+      "Midnight",
+      "Aubergine",
+      "Mulberry",
+      "Maroon",
+      "Petroleum",
+      "Dark Mauve",
+      "Rosewood",
+      "Slate Gray",
+      "Olive Green"
+    ].forEach(
+      color => addScore(color, 2)
+    );
+
+  }
 
 
-      if (
-        q2 === "classic" &&
-        (
-          color.includes("beige") ||
-          color.includes("taupe") ||
-          color.includes("navy") ||
-          color.includes("grey")
-        )
-      ) score += 2;
+  /*
+    Palette
+  */
+
+  if (palette === "earthy") {
+
+    [
+      "Café",
+      "Caramel",
+      "Sahara",
+      "Beige",
+      "Taupe",
+      "Maroon"
+    ].forEach(
+      color => addScore(color, 4)
+    );
+
+  }
 
 
-      if (
-        q2 === "bold" &&
-        (
-          color.includes("red") ||
-          color.includes("orange") ||
-          color.includes("maroon") ||
-          color.includes("petroleum")
-        )
-      ) score += 2;
+  if (palette === "soft") {
+
+    [
+      "Lavender",
+      "Baby Blue",
+      "Dusty Blue",
+      "Ice Mauve",
+      "Cream",
+      "Dusty Rose"
+    ].forEach(
+      color => addScore(color, 4)
+    );
+
+  }
 
 
-      if (
-        q3 === "green" &&
-        (
-          color.includes("green") ||
-          color.includes("olive") ||
-          color.includes("pistachio") ||
-          color.includes("mint")
-        )
-      ) score += 3;
+  if (palette === "green") {
+
+    [
+      "Mint Green",
+      "Pistachio",
+      "Olive Green",
+      "Light Olive Green"
+    ].forEach(
+      color => addScore(color, 5)
+    );
+
+  }
 
 
-      if (
-        q3 === "blue" &&
-        (
-          color.includes("blue") ||
-          color.includes("navy") ||
-          color.includes("petroleum") ||
-          color.includes("midnight")
-        )
-      ) score += 3;
+  if (palette === "deep") {
+
+    [
+      "Maroon",
+      "Mulberry",
+      "Aubergine",
+      "Midnight",
+      "Navy",
+      "Petroleum"
+    ].forEach(
+      color => addScore(color, 4)
+    );
+
+  }
 
 
-      if (
-        q3 === "pink" &&
-        (
-          color.includes("pink") ||
-          color.includes("rose") ||
-          color.includes("coral")
-        )
-      ) score += 3;
+  /*
+    Find highest scoring
+    available color.
+  */
+
+  const sortedColors =
+    Object.keys(scores)
+      .sort(
+        (a, b) =>
+          scores[b] -
+          scores[a]
+      );
 
 
-      if (
-        q3 === "neutral" &&
-        (
-          color.includes("beige") ||
-          color.includes("taupe") ||
-          color.includes("cream") ||
-          color.includes("grey") ||
-          color.includes("gray")
-        )
-      ) score += 3;
+  let recommendation = null;
 
 
-      scores[`${group.id}-${group.items.indexOf(item)}`] = {
-        score,
-        color: item.color,
-        group
-      };
+  for (
+    const color of sortedColors
+  ) {
 
-    });
-  });
+    for (
+      const group of productGroups
+    ) {
 
-
-  const best =
-    Object.values(scores)
-      .sort((a, b) => b.score - a.score)[0];
-
-
-  if (!best) return;
+      const index =
+        group.colors.findIndex(
+          item =>
+            item.color === color &&
+            !item.soldOut
+        );
 
 
-  document.getElementById("quizResult").innerHTML =
-    `Your recommended color is <strong>${best.color}</strong>.`;
+      if (index !== -1) {
+
+        recommendation = {
+          group,
+          index,
+          product:
+            group.colors[index]
+        };
+
+        break;
+
+      }
+
+    }
+
+
+    if (recommendation) break;
+
+  }
+
+
+  if (!recommendation) {
+
+    result.innerHTML =
+      "<p>We couldn't find an available recommendation right now.</p>";
+
+    result.classList.add(
+      "active"
+    );
+
+    return;
+
+  }
+
+
+  const {
+    group,
+    index,
+    product
+  } = recommendation;
+
+
+  result.innerHTML = `
+
+    <h3>Your recommended color is ${product.color} ♡</h3>
+
+    <img
+      src="${product.image}"
+      alt="${product.color}"
+    >
+
+    <p>${group.price} EGP</p>
+
+    <button
+      class="quiz-view-button"
+      onclick="openProduct('${group.id}', ${index})"
+    >
+      View Product
+    </button>
+
+  `;
+
+
+  result.classList.add(
+    "active"
+  );
+
 }
 
 
-/* =========================
-   CART TOAST
-========================= */
+/* START */
 
-function showCartToast(color) {
+document.addEventListener(
+  "DOMContentLoaded",
+  () => {
 
-  const toast =
-    document.getElementById("cartToast");
+    renderProductGroups();
 
-  const message =
-    document.getElementById("toastMessage");
+    updateCartCount();
 
+    updateWishlistCount();
 
-  message.textContent =
-    `${color} added to your cart ♡`;
-
-
-  toast.classList.add("show");
-
-
-  setTimeout(() => {
-    toast.classList.remove("show");
-  }, 2500);
-}
-
-
-/* =========================
-   INITIALIZE
-========================= */
-
-document.addEventListener("DOMContentLoaded", () => {
-
-  renderProductGroups();
-
-  updateCartCount();
-
-  updateWishlistCount();
-
-});
+  }
+);
