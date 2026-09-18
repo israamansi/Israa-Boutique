@@ -1,4 +1,4 @@
-* {
+@import url('https://fonts.googleapis.com/css2?family=Allura&display=swap');* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -35,10 +35,9 @@ header {
 }
 
 .logo {
-  font-family: "Segoe Print", "Bradley Hand", cursive;
-  font-size: 25px;
-  font-weight: 500;
-  font-style: italic;
+  font-family: "Allura", cursive;
+  font-size: 32px;
+  font-weight: 400;
   color: #593c2e;
 }
 
