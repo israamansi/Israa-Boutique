@@ -1,375 +1,373 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>Israa Boutique</title>
-
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <div class="logo">Israa Boutique</div>
 
-  <header>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#best-sellers">Best Sellers</a>
+      <a href="#quiz">Find Your Look</a>
+    </nav>
 
-    <div class="header-inner">
-
-      <div class="logo">
-        Israa Boutique
-      </div>
-
-      <nav>
-
-        <a href="#home">
-          Home
-        </a>
-
-        <a href="#best-sellers">
-          Best Sellers
-        </a>
-
-      </nav>
-
-      <div class="header-actions">
-
-        <button class="cart-button" onclick="openCart()">
-          🛒
-          <span id="cartCount">0</span>
-        </button>
-
-      </div>
-
-    </div>
-
-  </header>
-
-
-  <!-- MAIN -->
-
-  <main>
-
-    <!-- HERO -->
-
-    <section
-      class="hero"
-      id="home"
-    >
-
-      <div class="hero-content">
-
-        <h1>
-          Israa Boutique
-        </h1>
-
-        <p>
-          Elegant Hijabs, Made for You
-        </p>
-
-        <a
-          href="#best-sellers"
-          class="hero-button"
-        >
-          Shop Best Sellers
-        </a>
-
-      </div>
-
-    </section>
-
-
-    <!-- BEST SELLERS -->
-
-    <section
-      class="section"
-      id="best-sellers"
-    >
-
-      <h2 class="section-title">
-        Best Sellers
-      </h2>
-
-      <div
-        class="products"
-        id="productsContainer"
-      ></div>
-
-    </section>
-
-  </main>
-
-
-  <!-- PRODUCT MODAL -->
-
-  <div
-    class="overlay"
-    id="productOverlay"
-  >
-
-    <div class="modal">
-
-      <button
-        class="close"
-        onclick="closeProduct()"
-      >
-        ×
+    <div class="header-actions">
+      <button class="wishlist-button" onclick="openWishlist()">
+        ♡ <span id="wishlistCount">0</span>
       </button>
 
-      <img
-        id="modalImage"
-        class="modal-image"
-        src=""
-        alt=""
-      >
-
-      <h2 id="modalName"></h2>
-
-      <p>
-        <strong>Color:</strong>
-        <span id="modalColor"></span>
-      </p>
-
-      <p>
-        <strong>Price:</strong>
-        <span id="modalPrice"></span>
-        EGP
-      </p>
-
-      <button
-        class="add-button"
-        onclick="addCurrentProduct()"
-      >
-        Add to Cart
+      <button class="cart-button" onclick="openCart()">
+        🛒 <span id="cartCount">0</span>
       </button>
-
     </div>
-
   </div>
+</header>
 
 
-  <!-- CART -->
+<main>
 
-  <div
-    class="overlay"
-    id="cartOverlay"
-  >
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h1>Israa Boutique</h1>
+      <p>Elegant Hijabs, Made for You</p>
+      <a href="#best-sellers" class="hero-button">Shop Best Sellers</a>
+    </div>
+  </section>
 
-    <div class="modal">
 
-      <button
-        class="close"
-        onclick="closeCart()"
-      >
-        ×
-      </button>
+  <!-- BEST SELLERS -->
+  <section class="section" id="best-sellers">
+    <h2 class="section-title">Best Sellers</h2>
+    <div class="products" id="productsContainer"></div>
+  </section>
 
-      <h2>
-        Your Cart
-      </h2>
 
-      <div id="cartItems"></div>
+  <!-- QUIZ -->
+  <section class="section quiz-section" id="quiz">
 
-      <div class="cart-total">
+    <h2 class="section-title">Help You Find Your Look</h2>
 
-        Total:
-        <span id="cartTotal">
-          0
-        </span>
-        EGP
+    <div class="quiz-box">
 
+      <div class="quiz-question">
+        <h3>What is your skin undertone?</h3>
+
+        <label>
+          <input type="radio" name="undertone" value="warm">
+          Warm
+        </label>
+
+        <label>
+          <input type="radio" name="undertone" value="cool">
+          Cool
+        </label>
+
+        <label>
+          <input type="radio" name="undertone" value="neutral">
+          Neutral
+        </label>
       </div>
 
-      <button
-        class="checkout-button"
-        onclick="openCheckout()"
-      >
-        Checkout
+
+      <div class="quiz-question">
+        <h3>What do you prefer?</h3>
+
+        <label>
+          <input type="radio" name="brightness" value="light">
+          Light colors
+        </label>
+
+        <label>
+          <input type="radio" name="brightness" value="dark">
+          Dark colors
+        </label>
+      </div>
+
+
+      <div class="quiz-question">
+        <h3>Which palette feels more like you?</h3>
+
+        <label>
+          <input type="radio" name="palette" value="earthy">
+          Warm & Earthy
+        </label>
+
+        <label>
+          <input type="radio" name="palette" value="soft">
+          Soft & Cool
+        </label>
+
+        <label>
+          <input type="radio" name="palette" value="green">
+          Fresh & Green
+        </label>
+
+        <label>
+          <input type="radio" name="palette" value="deep">
+          Deep & Rich
+        </label>
+      </div>
+
+
+      <button class="quiz-button" onclick="getRecommendation()">
+        Find My Color
       </button>
 
-    </div>
-
-  </div>
-
-
-  <!-- CHECKOUT -->
-
-  <div
-    class="overlay"
-    id="checkoutOverlay"
-  >
-
-    <div class="modal">
-
-      <button
-        class="close"
-        onclick="closeCheckout()"
-      >
-        ×
-      </button>
-
-      <h2>
-        Checkout
-      </h2>
-
-      <form
-        class="checkout-form"
-        onsubmit="placeOrder(event)"
-      >
-
-        <label for="customerName">
-          Name
-        </label>
-
-        <input
-          id="customerName"
-          type="text"
-          required
-        >
-
-
-        <label for="customerPhone">
-          Phone
-        </label>
-
-        <input
-          id="customerPhone"
-          type="tel"
-          required
-        >
-
-
-        <label for="governorate">
-          Governorate
-        </label>
-
-        <select
-          id="governorate"
-          required
-        >
-
-          <option value="">
-            Choose
-          </option>
-
-          <option value="Alexandria">
-            Alexandria
-          </option>
-
-          <option value="Cairo">
-            Cairo
-          </option>
-
-          <option value="Giza">
-            Giza
-          </option>
-
-          <option value="Beheira">
-            Beheira
-          </option>
-
-          <option value="Dakahlia">
-            Dakahlia
-          </option>
-
-          <option value="Gharbia">
-            Gharbia
-          </option>
-
-          <option value="Monufia">
-            Monufia
-          </option>
-
-          <option value="Sharqia">
-            Sharqia
-          </option>
-
-          <option value="Qalyubia">
-            Qalyubia
-          </option>
-
-          <option value="Port Said">
-            Port Said
-          </option>
-
-          <option value="Suez">
-            Suez
-          </option>
-
-          <option value="Ismailia">
-            Ismailia
-          </option>
-
-          <option value="Damietta">
-            Damietta
-          </option>
-
-          <option value="Other">
-            Other
-          </option>
-
-        </select>
-
-
-        <label for="customerAddress">
-          Address
-        </label>
-
-        <input
-          id="customerAddress"
-          type="text"
-          required
-        >
-
-
-        <div class="payment-box">
-
-          <strong>
-            Payment Method
-          </strong>
-
-          <br>
-
-          Vodafone Cash
-
-          <br>
-
-          <strong>
-            01021755186
-          </strong>
-
-        </div>
-
-
-        <button
-          class="place-order"
-          type="submit"
-        >
-          Send Order via WhatsApp
-        </button>
-
-      </form>
+      <div id="quizResult" class="quiz-result"></div>
 
     </div>
+  </section>
 
-  </div>
+
+  <!-- PRODUCT CATALOG -->
+  <section class="section" id="productCatalog"></section>
+
+</main>
 
 
-  <!-- FOOTER -->
+<!-- PRODUCT MODAL -->
+<div class="overlay" id="productOverlay">
 
-  <footer>
+  <div class="modal">
+
+    <button class="close" onclick="closeProduct()">×</button>
+
+    <img id="modalImage" class="modal-image" src="" alt="">
+
+    <h2 id="modalName"></h2>
 
     <p>
-      © 2026 Israa Boutique
+      <strong>Color:</strong>
+      <span id="modalColor"></span>
     </p>
 
-  </footer>
+    <p>
+      <strong>Price:</strong>
+      <span id="modalPrice"></span> EGP
+    </p>
+
+    <button
+      id="modalWishlistButton"
+      class="wishlist-modal-button"
+      onclick="toggleCurrentWishlist()">
+      ♡ Add to Wishlist
+    </button>
+
+    <button
+      id="modalAddButton"
+      class="add-button"
+      onclick="addCurrentProduct()">
+      Add to Cart
+    </button>
+
+  </div>
+
+</div>
 
 
-  <script src="script.js"></script>
+<!-- CART MODAL -->
+<div class="overlay" id="cartOverlay">
+
+  <div class="modal">
+
+    <button class="close" onclick="closeCart()">×</button>
+
+    <h2>Your Cart</h2>
+
+    <div id="cartItems"></div>
+
+    <div class="cart-summary">
+
+      <div>
+        <span>Subtotal</span>
+        <strong><span id="cartSubtotal">0</span> EGP</strong>
+      </div>
+
+      <div>
+        <span>Shipping Fee</span>
+        <strong><span id="cartShipping">0</span> EGP</strong>
+      </div>
+
+      <div class="cart-total">
+        <span>Total</span>
+        <strong><span id="cartTotal">0</span> EGP</strong>
+      </div>
+
+    </div>
+
+    <button class="checkout-button" onclick="openCheckout()">
+      Checkout
+    </button>
+
+  </div>
+
+</div>
+
+
+<!-- WISHLIST MODAL -->
+<div class="overlay" id="wishlistOverlay">
+
+  <div class="modal">
+
+    <button class="close" onclick="closeWishlist()">×</button>
+
+    <h2>Your Wishlist ♡</h2>
+
+    <div id="wishlistItems"></div>
+
+  </div>
+
+</div>
+
+
+<!-- CHECKOUT MODAL -->
+<div class="overlay" id="checkoutOverlay">
+
+  <div class="modal">
+
+    <button class="close" onclick="closeCheckout()">×</button>
+
+    <h2>Checkout</h2>
+
+    <form class="checkout-form" onsubmit="placeOrder(event)">
+
+      <label for="customerName">Name</label>
+      <input id="customerName" type="text" required>
+
+
+      <label for="customerPhone">Phone</label>
+      <input id="customerPhone" type="tel" required>
+
+
+      <label for="governorate">Governorate</label>
+
+      <select id="governorate" onchange="updateCheckoutShipping()" required>
+
+        <option value="">Choose</option>
+
+        <option value="Alexandria">Alexandria</option>
+
+        <option value="Cairo">Cairo</option>
+        <option value="Giza">Giza</option>
+
+        <option value="Beheira">Beheira</option>
+        <option value="Dakahlia">Dakahlia</option>
+        <option value="Damietta">Damietta</option>
+        <option value="Gharbia">Gharbia</option>
+        <option value="Kafr El Sheikh">Kafr El Sheikh</option>
+        <option value="Monufia">Monufia</option>
+        <option value="Qalyubia">Qalyubia</option>
+        <option value="Sharqia">Sharqia</option>
+
+        <option value="Port Said">Port Said</option>
+        <option value="Suez">Suez</option>
+        <option value="Ismailia">Ismailia</option>
+
+        <option value="Aswan">Aswan</option>
+        <option value="Asyut">Asyut</option>
+        <option value="Beni Suef">Beni Suef</option>
+        <option value="Fayoum">Fayoum</option>
+        <option value="Luxor">Luxor</option>
+        <option value="Minya">Minya</option>
+        <option value="Qena">Qena</option>
+        <option value="Sohag">Sohag</option>
+
+        <option value="Red Sea">Red Sea</option>
+
+        <option value="North Sinai">North Sinai</option>
+        <option value="South Sinai">South Sinai</option>
+
+        <option value="Matrouh">Matrouh</option>
+        <option value="New Valley">New Valley</option>
+      </select>
+
+
+      <label for="customerAddress">Address</label>
+      <input id="customerAddress" type="text" required>
+
+
+      <!-- PAYMENT NOTICE -->
+      <div class="payment-notice">
+        Please transfer the full amount before placing your order
+        to secure your order.
+      </div>
+
+
+      <div class="payment-box">
+
+        <strong>Payment Method</strong>
+
+        <br>
+
+        Vodafone Cash
+
+        <br>
+
+        <strong>01021755186</strong>
+
+      </div>
+
+
+      <!-- CHECKOUT SUMMARY -->
+      <div class="checkout-summary">
+
+        <div>
+          <span>Subtotal</span>
+          <strong>
+            <span id="checkoutSubtotal">0</span> EGP
+          </strong>
+        </div>
+
+        <div>
+          <span>Shipping Fee</span>
+          <strong>
+            <span id="checkoutShipping">0</span> EGP
+          </strong>
+        </div>
+
+        <div class="checkout-final-total">
+          <span>Total</span>
+          <strong>
+            <span id="checkoutTotal">0</span> EGP
+          </strong>
+        </div>
+
+      </div>
+
+
+      <button class="place-order" type="submit">
+        Send Order via WhatsApp
+      </button>
+
+    </form>
+
+  </div>
+
+</div>
+
+
+<!-- CUTE CART NOTIFICATION -->
+<div id="cartToast" class="cart-toast">
+  <span class="toast-heart">♡</span>
+  <span id="toastMessage">Added to your cart</span>
+</div>
+
+
+<footer>
+  <p>© 2026 Israa Boutique</p>
+</footer>
+
+
+<script src="script.js"></script>
 
 </body>
-
 </html>
