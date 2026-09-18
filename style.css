@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap');
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -9,7 +11,7 @@ html {
 }
 
 body {
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
   background: #f5eee5;
   color: #4b3327;
 }
@@ -131,28 +133,6 @@ nav a {
   font-size: 32px;
   margin-bottom: 35px;
   color: #593c2e;
-}
-
-/* BEST SELLERS */
-
-.products {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 22px;
-}
-
-.product-card {
-  background: #fffaf5;
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0 5px 18px rgba(75, 51, 39, 0.10);
-}
-
-.product-card img {
-  width: 100%;
-  aspect-ratio: 1 / 1.25;
-  object-fit: cover;
-  display: block;
 }
 
 /* PRODUCT GROUPS */
@@ -660,11 +640,6 @@ footer {
 
   .section-title {
     font-size: 27px;
-  }
-
-  .products {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
   }
 
   .group-track {
