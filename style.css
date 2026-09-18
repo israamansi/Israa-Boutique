@@ -35,8 +35,10 @@ header {
 }
 
 .logo {
+  font-family: "Segoe Print", "Bradley Hand", cursive;
   font-size: 25px;
-  font-weight: bold;
+  font-weight: 500;
+  font-style: italic;
   color: #593c2e;
 }
 
@@ -195,8 +197,9 @@ nav a {
 }
 
 .catalog-info span {
-  font-size: 14px;
-  color: #755b49;
+  font-size: 17px;
+  font-weight: bold;
+  color: #593c2e;
 }
 
 .catalog-info button {
@@ -677,7 +680,8 @@ footer {
   }
 
   .catalog-info span {
-    font-size: 12px;
+  font-size: 17px;
+  font-weight: bold;
   }
 
   .catalog-info button {
