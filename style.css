@@ -101,10 +101,9 @@ nav a {
 }
 
 .hero h1 {
-  font-family: "URW Chancery L", "Brush Script MT", "Segoe Script", cursive;
+  font-family: Georgia, serif;
   font-size: clamp(40px, 7vw, 75px);
   margin-bottom: 15px;
-  font-weight: normal;
 }
 
 .hero p {
