@@ -101,9 +101,10 @@ nav a {
 }
 
 .hero h1 {
-  font-family: "Great Vibes", cursive;
+  font-family: "Segoe Print", "Comic Sans MS", cursive;
   font-size: clamp(40px, 7vw, 75px);
   margin-bottom: 15px;
+  font-weight: normal;
 }
 
 .hero p {
