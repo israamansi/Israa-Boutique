@@ -473,22 +473,23 @@ function renderProductGroups() {
     });
 
 
-  const wristCuffsTitle =
-    document.createElement("h2");
+  const lycraTitle = document.createElement("h2");
+lycraTitle.className = "section-title";
+lycraTitle.textContent = "Lycra Jersey Scarf";
+catalog.appendChild(lycraTitle);
 
-  wristCuffsTitle.className =
-    "section-title";
+productGroups
+  .slice(9, 16)
+  .forEach(group => {
+    createProductWindow(catalog, group);
+  });
 
-  wristCuffsTitle.textContent =
-    "Wrist Cuffs";
+const wristCuffsTitle = document.createElement("h2");
+wristCuffsTitle.className = "section-title";
+wristCuffsTitle.textContent = "Wrist Cuffs";
+catalog.appendChild(wristCuffsTitle);
 
-  catalog.appendChild(wristCuffsTitle);
-
-
-  createProductWindow(
-    catalog,
-    productGroups[9]
-  );
+createProductWindow(catalog, productGroups[16]);
 
 }
 
