@@ -306,83 +306,6 @@ const productGroups = [
       }
     ]
   },
-  {
-  id: "lycraJersey1",
-  name: "Lycra Jersey Scarf",
-  price: 200,
-  colors: [
-    { color: "Blush Pink", image: "Blushpink.lycra.png", soldOut: false },
-    { color: "Baby Pink", image: "Babypink.lycra.png", soldOut: false },
-    { color: "Hot Pink", image: "Hotpink.lycra.png", soldOut: false },
-    { color: "Lavender", image: "Lavender.lycra.png", soldOut: false },
-    { color: "Mulberry", image: "Mullberry.lycra.png", soldOut: false },
-    { color: "Aubergine", image: "Aubergine.lycra.png", soldOut: false }
-  ]
-},
-
-{
-  id: "lycraJersey2",
-  name: "Lycra Jersey Scarf",
-  price: 200,
-  colors: [
-    { color: "White", image: "1790024126134.png", soldOut: false },
-    { color: "Black", image: "1790024132101.png", soldOut: false }
-  ]
-},
-
-{
-  id: "lycraJersey3",
-  name: "Lycra Jersey Scarf",
-  price: 200,
-  colors: [
-    { color: "Turmeric Yellow", image: "1790024672765.png", soldOut: false },
-    { color: "Deep Turmeric Yellow", image: "1790024594027.png", soldOut: false }
-  ]
-},
-
-{
-  id: "lycraJersey4",
-  name: "Lycra Jersey Scarf",
-  price: 200,
-  colors: [
-    { color: "Red", image: "1790023642773.png", soldOut: false },
-    { color: "Burgundy", image: "1790023923078.png", soldOut: false },
-    { color: "Maroon", image: "1790023682274.png", soldOut: false }
-  ]
-},
-
-{
-  id: "lycraJersey5",
-  name: "Lycra Jersey Scarf",
-  price: 200,
-  colors: [
-    { color: "Pistachio", image: "1790022895515.png", soldOut: false },
-    { color: "Olive Green", image: "1790022837937.png", soldOut: false }
-  ]
-},
-
-{
-  id: "lycraJersey6",
-  name: "Lycra Jersey Scarf",
-  price: 200,
-  colors: [
-    { color: "Light Beige", image: "Lightbeige.lycra.png", soldOut: false },
-    { color: "Grey", image: "Grey.lycra.png", soldOut: false },
-    { color: "Dark Grey", image: "Darkgrey.lycra.png", soldOut: false }
-  ]
-},
-
-{
-  id: "lycraJersey7",
-  name: "Lycra Jersey Scarf",
-  price: 200,
-  colors: [
-    { color: "Baby Blue", image: "1790024478663.png", soldOut: false },
-    { color: "Hot Blue", image: "1790023046886.png", soldOut: false },
-    { color: "Petroleum", image: "1789960790700.png", soldOut: false },
-    { color: "Navy", image: "1789960834834.png", soldOut: false }
-  ]
-},
 
   {
     id: "wristCuffs",
@@ -473,23 +396,22 @@ function renderProductGroups() {
     });
 
 
-  const lycraTitle = document.createElement("h2");
-lycraTitle.className = "section-title";
-lycraTitle.textContent = "Lycra Jersey Scarf";
-catalog.appendChild(lycraTitle);
+  const wristCuffsTitle =
+    document.createElement("h2");
 
-productGroups
-  .slice(9, 16)
-  .forEach(group => {
-    createProductWindow(catalog, group);
-  });
+  wristCuffsTitle.className =
+    "section-title";
 
-const wristCuffsTitle = document.createElement("h2");
-wristCuffsTitle.className = "section-title";
-wristCuffsTitle.textContent = "Wrist Cuffs";
-catalog.appendChild(wristCuffsTitle);
+  wristCuffsTitle.textContent =
+    "Wrist Cuffs";
 
-createProductWindow(catalog, productGroups[16]);
+  catalog.appendChild(wristCuffsTitle);
+
+
+  createProductWindow(
+    catalog,
+    productGroups[9]
+  );
 
 }
 
