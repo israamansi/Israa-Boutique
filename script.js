@@ -45,26 +45,10 @@ const productGroups = [
     name: "Crystal Comfort Scarf",
     price: 150,
     colors: [
-      {
-        color: "Mint Green",
-        image: "1789663443949.jpg",
-        soldOut: false
-      },
-      {
-        color: "Lavender",
-        image: "1789663513275.jpg",
-        soldOut: false
-      },
-      {
-        color: "Café",
-        image: "1789663143161.jpg",
-        soldOut: false
-      },
-      {
-        color: "Slate Gray",
-        image: "slate-gray.jpg",
-        soldOut: false
-      }
+      { color: "Mint Green", image: "1789663443949.jpg", soldOut: false },
+      { color: "Lavender", image: "1789663513275.jpg", soldOut: false },
+      { color: "Café", image: "1789663143161.jpg", soldOut: false },
+      { color: "Slate Gray", image: "slate-gray.jpg", soldOut: false }
     ]
   },
 
@@ -73,26 +57,10 @@ const productGroups = [
     name: "Crepe Chiffon Scarf",
     price: 200,
     colors: [
-      {
-        color: "Sahara",
-        image: "1789653340773.jpg",
-        soldOut: false
-      },
-      {
-        color: "Taupe",
-        image: "1789653276516.jpg",
-        soldOut: false
-      },
-      {
-        color: "Light Beige",
-        image: "1789666550479.jpg",
-        soldOut: false
-      },
-      {
-        color: "Beige",
-        image: "1789666385502.jpg",
-        soldOut: false
-      }
+      { color: "Sahara", image: "1789653340773.jpg", soldOut: false },
+      { color: "Taupe", image: "1789653276516.jpg", soldOut: false },
+      { color: "Light Beige", image: "1789666550479.jpg", soldOut: false },
+      { color: "Beige", image: "1789666385502.jpg", soldOut: false }
     ]
   },
 
@@ -101,26 +69,10 @@ const productGroups = [
     name: "Crepe Chiffon Scarf",
     price: 200,
     colors: [
-      {
-        color: "White",
-        image: "1789612810611.jpg",
-        soldOut: false
-      },
-      {
-        color: "Off White",
-        image: "1789656243041.jpg",
-        soldOut: false
-      },
-      {
-        color: "Ice Grey",
-        image: "1789656096412.jpg",
-        soldOut: false
-      },
-      {
-        color: "Cream",
-        image: "cream.jpg",
-        soldOut: false
-      }
+      { color: "White", image: "1789612810611.jpg", soldOut: false },
+      { color: "Off White", image: "1789656243041.jpg", soldOut: false },
+      { color: "Ice Grey", image: "1789656096412.jpg", soldOut: false },
+      { color: "Cream", image: "cream.jpg", soldOut: false }
     ]
   },
 
@@ -129,26 +81,10 @@ const productGroups = [
     name: "Crepe Chiffon Scarf",
     price: 200,
     colors: [
-      {
-        color: "Mint Green",
-        image: "1789656901442.jpg",
-        soldOut: false
-      },
-      {
-        color: "Pistachio",
-        image: "1789657273597.jpg",
-        soldOut: false
-      },
-      {
-        color: "Light Olive Green",
-        image: "Light.olive.green.jpg",
-        soldOut: false
-      },
-      {
-        color: "Olive Green",
-        image: "1789658305384.jpg",
-        soldOut: false
-      }
+      { color: "Mint Green", image: "1789656901442.jpg", soldOut: false },
+      { color: "Pistachio", image: "1789657273597.jpg", soldOut: false },
+      { color: "Light Olive Green", image: "Light.olive.green.jpg", soldOut: false },
+      { color: "Olive Green", image: "1789658305384.jpg", soldOut: false }
     ]
   },
 
@@ -157,36 +93,12 @@ const productGroups = [
     name: "Crepe Chiffon Scarf",
     price: 200,
     colors: [
-      {
-        color: "Baby Blue",
-        image: "1789661119267.jpg",
-        soldOut: false
-      },
-      {
-        color: "Dusty Blue",
-        image: "1789653467598.jpg",
-        soldOut: false
-      },
-      {
-        color: "Ocean Blue",
-        image: "1789653590293.jpg",
-        soldOut: false
-      },
-      {
-        color: "Petroleum",
-        image: "1789609239720.jpg",
-        soldOut: false
-      },
-      {
-        color: "Navy",
-        image: "1789661581244.jpg",
-        soldOut: false
-      },
-      {
-        color: "Midnight",
-        image: "1789654089295.jpg",
-        soldOut: false
-      }
+      { color: "Baby Blue", image: "1789661119267.jpg", soldOut: false },
+      { color: "Dusty Blue", image: "1789653467598.jpg", soldOut: false },
+      { color: "Ocean Blue", image: "1789653590293.jpg", soldOut: false },
+      { color: "Petroleum", image: "1789609239720.jpg", soldOut: false },
+      { color: "Navy", image: "1789661581244.jpg", soldOut: false },
+      { color: "Midnight", image: "1789654089295.jpg", soldOut: false }
     ]
   },
 
@@ -195,36 +107,12 @@ const productGroups = [
     name: "Crepe Chiffon Scarf",
     price: 200,
     colors: [
-      {
-        color: "Peach",
-        image: "1789662261446.jpg",
-        soldOut: false
-      },
-      {
-        color: "Coral",
-        image: "1789662069402.jpg",
-        soldOut: false
-      },
-      {
-        color: "Orange",
-        image: "1789609303020.jpg",
-        soldOut: false
-      },
-      {
-        color: "Red",
-        image: "1789609437413.jpg",
-        soldOut: false
-      },
-      {
-        color: "Caramel",
-        image: "1789670850781.jpg",
-        soldOut: false
-      },
-      {
-        color: "Maroon",
-        image: "1789661509678.jpg",
-        soldOut: false
-      }
+      { color: "Peach", image: "1789662261446.jpg", soldOut: false },
+      { color: "Coral", image: "1789662069402.jpg", soldOut: false },
+      { color: "Orange", image: "1789609303020.jpg", soldOut: false },
+      { color: "Red", image: "1789609437413.jpg", soldOut: false },
+      { color: "Caramel", image: "1789670850781.jpg", soldOut: false },
+      { color: "Maroon", image: "1789661509678.jpg", soldOut: false }
     ]
   },
 
@@ -233,26 +121,10 @@ const productGroups = [
     name: "Crepe Chiffon Scarf",
     price: 200,
     colors: [
-      {
-        color: "Dusty Rose",
-        image: "1789659142918.jpg",
-        soldOut: false
-      },
-      {
-        color: "Baby Pink",
-        image: "1789672026217.jpg",
-        soldOut: false
-      },
-      {
-        color: "Rosewood",
-        image: "1789659236519 (1).jpg",
-        soldOut: false
-      },
-      {
-        color: "Pink",
-        image: "1789659236519.jpg",
-        soldOut: false
-      }
+      { color: "Dusty Rose", image: "1789659142918.jpg", soldOut: false },
+      { color: "Baby Pink", image: "1789672026217.jpg", soldOut: false },
+      { color: "Rosewood", image: "1789659236519 (1).jpg", soldOut: false },
+      { color: "Pink", image: "1789659236519.jpg", soldOut: false }
     ]
   },
 
@@ -261,16 +133,8 @@ const productGroups = [
     name: "Crepe Chiffon Scarf",
     price: 200,
     colors: [
-      {
-        color: "Dusty Grey",
-        image: "1789655859702.jpg",
-        soldOut: false
-      },
-      {
-        color: "Grey",
-        image: "1789655856246.jpg",
-        soldOut: false
-      }
+      { color: "Dusty Grey", image: "1789655859702.jpg", soldOut: false },
+      { color: "Grey", image: "1789655856246.jpg", soldOut: false }
     ]
   },
 
@@ -279,31 +143,124 @@ const productGroups = [
     name: "Crepe Chiffon Scarf",
     price: 200,
     colors: [
-      {
-        color: "Dark Mauve",
-        image: "1789664028182.jpg",
-        soldOut: false
-      },
-      {
-        color: "Mulberry",
-        image: "1789672320095.jpg",
-        soldOut: false
-      },
-      {
-        color: "Lavender",
-        image: "1789612119826.jpg",
-        soldOut: false
-      },
-      {
-        color: "Ice Mauve",
-        image: "1789658699638.jpg",
-        soldOut: false
-      },
-      {
-        color: "Aubergine",
-        image: "Aubergine.jpg",
-        soldOut: false
-      }
+      { color: "Dark Mauve", image: "1789664028182.jpg", soldOut: false },
+      { color: "Mulberry", image: "1789672320095.jpg", soldOut: false },
+      { color: "Lavender", image: "1789612119826.jpg", soldOut: false },
+      { color: "Ice Mauve", image: "1789658699638.jpg", soldOut: false },
+      { color: "Aubergine", image: "Aubergine.jpg", soldOut: false }
+    ]
+  },
+
+  /* LYCra JERSEY */
+
+  {
+    id: "lycra1",
+    name: "Lycra Jersey Scarf",
+    price: 200,
+    oval: true,
+    colors: [
+      { color: "Blush Pink", image: "Blushpink.lycra.png", soldOut: false },
+      { color: "Baby Pink", image: "Babypink.lycra.png", soldOut: false },
+      { color: "Hot Pink", image: "Hotpink.lycra.png", soldOut: false },
+      { color: "Lavender", image: "Lavender.lycra.png", soldOut: false },
+      { color: "Mulberry", image: "Mullberry.lycra.png", soldOut: false },
+      { color: "Aubergine", image: "Aubergine.lycra.png", soldOut: false }
+    ]
+  },
+
+  {
+    id: "lycra2",
+    name: "Lycra Jersey Scarf",
+    price: 200,
+    oval: true,
+    colors: [
+      { color: "White", image: "1790024126134.png", soldOut: false },
+      { color: "Black", image: "1790024132101.png", soldOut: false }
+    ]
+  },
+
+  {
+    id: "lycra3",
+    name: "Lycra Jersey Scarf",
+    price: 200,
+    oval: true,
+    colors: [
+      { color: "Turmeric Yellow", image: "1790024672765.png", soldOut: false },
+      { color: "Deep Turmeric Yellow", image: "1790024594027.png", soldOut: false }
+    ]
+  },
+
+  {
+    id: "lycra4",
+    name: "Lycra Jersey Scarf",
+    price: 200,
+    oval: true,
+    colors: [
+      { color: "Red", image: "1790023642773.png", soldOut: false },
+      { color: "Burgundy", image: "1790023923078.png", soldOut: false },
+      { color: "Maroon", image: "1790023682274.png", soldOut: false }
+    ]
+  },
+
+  {
+    id: "lycra5",
+    name: "Lycra Jersey Scarf",
+    price: 200,
+    oval: true,
+    colors: [
+      { color: "Pistachio", image: "1790022895515.png", soldOut: false },
+      { color: "Olive Green", image: "1790022837937.png", soldOut: false }
+    ]
+  },
+
+  {
+    id: "lycra6",
+    name: "Lycra Jersey Scarf",
+    price: 200,
+    oval: true,
+    colors: [
+      { color: "Light Beige", image: "Lightbeige.lycra.png", soldOut: false },
+      { color: "Grey", image: "Grey.lycra.png", soldOut: false },
+      { color: "Dark Grey", image: "Darkgrey.lycra.png", soldOut: false }
+    ]
+  },
+
+  {
+    id: "lycra7",
+    name: "Lycra Jersey Scarf",
+    price: 200,
+    oval: true,
+    colors: [
+      { color: "Baby Blue", image: "1790024478663.png", soldOut: false },
+      { color: "Hot Blue", image: "1790023046886.png", soldOut: false },
+      { color: "Petroleum", image: "1789960790700.png", soldOut: false },
+      { color: "Navy", image: "1789960834834.png", soldOut: false }
+    ]
+  },
+
+  /* ISRAA'S PICKS */
+
+  {
+    id: "picks1",
+    name: "Fitted Long Sleeve Top with Flowy Chiffon Cape",
+    price: 450,
+    square: true,
+    colors: [
+      { color: "Black", image: "1790375060793.jpg", soldOut: false },
+      { color: "Burgundy", image: "1790375078375.jpg", soldOut: false },
+      { color: "White", image: "1790374969251.jpg", soldOut: false }
+    ]
+  },
+
+  {
+    id: "picks2",
+    name: "Fitted Cami Top with Flowy Chiffon Cape",
+    price: 450,
+    square: true,
+    colors: [
+      { color: "Black", image: "1790374693548.jpg", soldOut: false },
+      { color: "Burgundy", image: "1790374697235.jpg", soldOut: false },
+      { color: "White", image: "1790374689932.jpg", soldOut: false }
     ]
   },
 
@@ -312,21 +269,9 @@ const productGroups = [
     name: "Wrist Cuffs",
     price: 100,
     colors: [
-      {
-        color: "Sparkles",
-        image: "1789701688187.jpg",
-        soldOut: false
-      },
-      {
-        color: "Lace",
-        image: "1789701369378.jpg",
-        soldOut: false
-      },
-      {
-        color: "Tulle",
-        image: "1789701870086.jpg",
-        soldOut: false
-      }
+      { color: "Sparkles", image: "1789701688187.jpg", soldOut: false },
+      { color: "Lace", image: "1789701369378.jpg", soldOut: false },
+      { color: "Tulle", image: "1789701870086.jpg", soldOut: false }
     ]
   }
 
@@ -345,7 +290,7 @@ let currentIndex = 0;
 
 /* PRODUCT CATALOG */
 
-function renderProductGroups() {
+ function renderProductGroups() {
 
   const catalog =
     document.getElementById("productCatalog");
@@ -354,6 +299,7 @@ function renderProductGroups() {
 
   catalog.innerHTML = "";
 
+  /* CRYSTAL */
 
   const crystalTitle =
     document.createElement("h2");
@@ -372,6 +318,8 @@ function renderProductGroups() {
   );
 
 
+  /* CHIFFON */
+
   const chiffonTitle =
     document.createElement("h2");
 
@@ -382,7 +330,6 @@ function renderProductGroups() {
     "Crepe Chiffon Scarf";
 
   catalog.appendChild(chiffonTitle);
-
 
   productGroups
     .slice(1, 9)
@@ -396,6 +343,58 @@ function renderProductGroups() {
     });
 
 
+  /* LYCRA JERSEY */
+
+  const lycraTitle =
+    document.createElement("h2");
+
+  lycraTitle.className =
+    "section-title";
+
+  lycraTitle.textContent =
+    "Lycra Jersey Scarf";
+
+  catalog.appendChild(lycraTitle);
+
+  productGroups
+    .slice(9, 16)
+    .forEach(group => {
+
+      createProductWindow(
+        catalog,
+        group
+      );
+
+    });
+
+
+  /* ISRAA'S PICKS */
+
+  const picksTitle =
+    document.createElement("h2");
+
+  picksTitle.className =
+    "section-title";
+
+  picksTitle.textContent =
+    "Israa's Picks";
+
+  catalog.appendChild(picksTitle);
+
+  productGroups
+    .slice(16, 18)
+    .forEach(group => {
+
+      createProductWindow(
+        catalog,
+        group
+      );
+
+    });
+
+
+  /* WRIST CUFFS */
+
   const wristCuffsTitle =
     document.createElement("h2");
 
@@ -407,10 +406,9 @@ function renderProductGroups() {
 
   catalog.appendChild(wristCuffsTitle);
 
-
   createProductWindow(
     catalog,
-    productGroups[9]
+    productGroups[18]
   );
 
 }
@@ -451,7 +449,9 @@ function createProductWindow(
         document.createElement("div");
 
       card.className =
-        "catalog-card";
+  "catalog-card" +
+  (group.oval ? " oval-card" : "") +
+  (group.square ? " square-card" : "");
 
 
       const key =
