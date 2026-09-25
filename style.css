@@ -716,6 +716,8 @@ footer {
    ========================= */
 
 .oval-card {
+  width: 75%;
+  margin: 0 auto;
   border-radius: 50% / 38%;
   overflow: hidden;
 }
