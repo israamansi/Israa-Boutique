@@ -711,3 +711,29 @@ footer {
     max-width: calc(100% - 30px);
   }
 }
+/* =========================
+   LYCra JERSEY OVAL WINDOWS
+   ========================= */
+
+.oval-card {
+  border-radius: 50% / 38%;
+  overflow: hidden;
+}
+
+.oval-card img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+
+/* =========================
+   ISRAA'S PICKS
+   ========================= */
+
+.square-card img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
