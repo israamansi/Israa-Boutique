@@ -739,3 +739,7 @@ footer {
 .lycra-modal-image {
   border-radius: 50%;
 }
+
+.modal-image.lycra-modal-image {
+  border-radius: 50%;
+}
