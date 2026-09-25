@@ -736,3 +736,6 @@ footer {
   aspect-ratio: 1 / 1;
   object-fit: cover;
 }
+.lycra-modal-image {
+  border-radius: 50%;
+}
