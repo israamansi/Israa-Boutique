@@ -559,7 +559,13 @@ function updateProductModal() {
   document.getElementById(
     "modalImage"
   ).src = product.image;
+const modalImage =
+  document.getElementById("modalImage");
 
+modalImage.classList.toggle(
+  "lycra-modal-image",
+  currentGroup.oval === true
+);
 
   document.getElementById(
     "modalImage"
